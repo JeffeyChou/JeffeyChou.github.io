@@ -7,23 +7,28 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="简单完成blog的搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://jeffeychou.github.io/2023/01/27/hello%20word/index.html">
+<meta property="og:title" content="Hexo blog 搭建">
+<meta property="og:url" content="https://jeffeychou.github.io/2023/01/27/Hexo-blog-%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="好好吃饭， 认真生活">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="简单完成blog的搭建">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-01-27T15:08:41.283Z">
+<meta property="og:image" content="https://i.imgur.com/3JgYDst.png">
+<meta property="og:image" content="https://i.imgur.com/OmCepeO.png">
+<meta property="og:image" content="https://i.imgur.com/GJjWSJW.png">
+<meta property="og:image" content="https://i.imgur.com/HYRuLyq.png">
+<meta property="article:published_time" content="2023-01-27T01:07:49.000Z">
 <meta property="article:modified_time" content="2023-01-27T15:08:41.283Z">
 <meta property="article:author" content="周韵萱">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="Hexo 前端 博客搭建">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/3JgYDst.png">
 
     <meta name="keywords" content="Blog">
 
 
-<title >Hello World</title>
+<title >Hexo blog 搭建</title>
 
 <!-- Favicon -->
 
@@ -224,7 +229,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            Hello World
+                            Hexo blog 搭建
                         </h1>
 
                         
@@ -355,7 +360,7 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            15:08
+            01:07
         </div>
     </div>
     <div class="col-sm-4">
@@ -367,21 +372,123 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <h1 id="1-快速开始"><a href="#1-快速开始" class="headerlink" title="1 快速开始"></a>1 快速开始</h1><p>首先确保您的设备上安装了相关软件，包括以下应用程序<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">^1</a>：</p>
+<ul>
+<li>Node.js (按目前来说应该是 16.x 以上的版本)</li>
+<li>Git</li>
+</ul>
+<h3 id="1-1-安装-Hexo"><a href="#1-1-安装-Hexo" class="headerlink" title="1.1 安装 Hexo"></a>1.1 安装 Hexo</h3><p>完成所有必需的软件安装后，即可以使用 npm 安装 Hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-初始化项目"><a href="#1-2-初始化项目" class="headerlink" title="1.2 初始化项目"></a>1.2 初始化项目</h3><p>在您想存放博客文件的地方使用命令行在该位置打开。使用以下命令以创建一个 Hexo 项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>这样便在当前文件夹下创建了一个名为<code>blog</code>的文件夹，该位置便是您博客的根目录</p>
+<h3 id="1-3-安装第三方主题"><a href="#1-3-安装第三方主题" class="headerlink" title="1.3 安装第三方主题"></a>1.3 安装第三方主题</h3><p>在 Hexo 5.0 版本上，可以使用 npm 安装主题。以<a target="_blank" rel="noopener" href="https://github.com/MaLuns/hexo-theme-async/blob/master/README_zh-CN.md">hexo-theme-async</a> 为例<a target="_blank" rel="noopener" href="https://blog.esunr.xyz/2022/06/64163235c30f.html">^2</a>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-theme-async@latest</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意, 有些主题可能需要安装其他依赖才能正确显示, 为确保正确安装, 请参考对应主题的官方安装文档操作<br>如 async 主题需要 <code>ejs</code> 和 <code>less</code> 的渲染器, 需要提前安装好.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-renderer-less hexo-renderer-ejs</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h1 id="为什么想做一个网站"><a href="#为什么想做一个网站" class="headerlink" title="为什么想做一个网站"></a>为什么想做一个网站</h1><p>本来想注册个自己的域名的，结果发现自己名字.com的域名被购买了，还被重定向到黄网了，一怒之下花了10刀买了个类似的域名占坑，一方面丢自己的博客，另一方面给自己的梯子套CDN，还有打算做一个自己的CV备用。</p>
+<p>安装完成后在根目录下的<code>_congif.yml</code>中修改 <code>theme</code> 字段为 <code>async</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">async</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="1-4-配置第三方主题"><a href="#1-4-配置第三方主题" class="headerlink" title="1.4 配置第三方主题"></a>1.4 配置第三方主题</h3><p>使用 npm 安装的第三方主题修改配置需要在根目录下新建文件<code>_config.async.yml</code> 具体名称需要根据您所安装的主题修改, 我这里使用的是<code>async</code>主题, 所以配置文件含有 <strong>async</strong> 字段<br>您仅需在  <code>_config.async.yml</code>  中自定义您想要覆盖的配置，其余将自动与主题默认配置合并.<br>为确保您能正确了解主题的所有配置, 建议是到主题的源码处复制对应的<a target="_blank" rel="noopener" href="https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/_config.yml">yaml 配置文件</a></p>
+<h3 id="1-5-快速本地部署"><a href="#1-5-快速本地部署" class="headerlink" title="1.5 快速本地部署"></a>1.5 快速本地部署</h3><p>在博客的根目录下使用命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>即可完成对博客的静态网页编译(generate)</p>
+<p>而使用命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>即可在本地完成部署, 成功后会显示:</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/3JgYDst.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">本地部署示意
+    </div>
+</center>
+
+<p>此时, 在浏览器打开 <code>http://localhost:4000/</code> 即可看到您部署的网页:</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/OmCepeO.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">部署您的第一个博客
+    </div>
+</center>
+
+<p>若要清除编译后的静态网页, 使用以下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c</span><br></pre></td></tr></table></figure>
+
+<p>此时, 博客根目录下的 <code>/public</code> 目录便被删除</p>
+<hr>
+<h1 id="2-将网页部署到-github-io"><a href="#2-将网页部署到-github-io" class="headerlink" title="2 将网页部署到 github.io"></a>2 将网页部署到 github.io</h1><p>静态博客在网络上发布的一般流程是: <strong>写好文章-&gt; 本地生成静态页面 -&gt; 将网站所需要的文件单独上传 -&gt; 发布成功 -&gt;(可选)上传完整站点数据备份。</strong></p>
+<p>为简化我们操作, 回归专心于写作, 我将其简化成如下工作流: <strong>本地上传仓库 a -&gt; github action 自动部署 -&gt; 推送到仓库 b，网站展示</strong> <a target="_blank" rel="noopener" href="https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/">^3</a></p>
+<h3 id="2-1-创建仓库"><a href="#2-1-创建仓库" class="headerlink" title="2.1 创建仓库"></a>2.1 创建仓库</h3><p>这里的两个仓库 a, b 分别储存博客的完整源代码, 博客静态编译后的用于发布展示的代码<br>由于使用 Github action 需要使用到自己的私钥,强烈建议仓库 a 设置为私有, 而仓库 b 可以凭个人喜好设置为公有或者私有</p>
+<ol>
+<li><p>在自己的 github 账号上创建两个仓库, 其中用于展示发布的仓库 b 的仓库名设置为 <code>您的GitHub用户名.github.io</code> . 这样是方便后续我们使用 <code>用户名.github.io</code> 来访问博客</p>
+</li>
+<li><p>将自己的网站完整源代码推送到仓库 a, 这里推荐使用 vscode 的 source control 直接可视化操作</p>
+</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/GJjWSJW.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">使用VsCode完成推送
+    </div>
+</center>
+
+<p>完成后打开网页即可查看自己的推送结果</p>
+<h3 id="2-2-配置-GitHub-Action"><a href="#2-2-配置-GitHub-Action" class="headerlink" title="2.2 配置 GitHub Action"></a>2.2 配置 GitHub Action</h3><ol>
+<li>这里我使用了 <code>peaceiris/actions-gh-pages</code> 的配置文件,在根目录下的 <code>.github</code> 目录下创建文件夹 <code>workflow</code> ,然后在该文件夹下创建新的<code>.yml</code> 文件<br>将对应的配置代码写进去即可</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy Hexo Pages</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - &quot;master&quot;</span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - name: Checkout repositories</span><br><span class="line">        uses: actions/checkout@v3</span><br><span class="line">        with:</span><br><span class="line">          submodules: true # Fetch Hexo themes (true OR recursive)</span><br><span class="line">          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod</span><br><span class="line">      - name: Setup node</span><br><span class="line">        uses: actions/setup-node@v3</span><br><span class="line">        with:</span><br><span class="line">          node-version: 16.x # 这里填上您设备对应的Node.js 版本</span><br><span class="line">      - name: Setup yarn &amp; Install node_modules</span><br><span class="line">        uses: borales/actions-yarn@v4</span><br><span class="line">        with:</span><br><span class="line">          cmd: install # will run `yarn install` command</span><br><span class="line">      - name: Build</span><br><span class="line">        run: |</span><br><span class="line">          yarn clean</span><br><span class="line">          yarn build</span><br><span class="line">      - name: Deploy</span><br><span class="line">        uses: peaceiris/actions-gh-pages@v3</span><br><span class="line">        with:</span><br><span class="line">          personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;</span><br><span class="line">          external_repository: &lt;username&gt;/&lt;username&gt;.github.io</span><br><span class="line">          publish_branch: master</span><br><span class="line">          publish_dir: ./public</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>根据自己情况修改<code>jobs:steps:uses</code>和<code>external_repository:(代码仓库b的地址)</code>即可。</p>
+</li>
+<li><p>注意到配置文件中有一个<code>personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;</code>，我们需要创建个人私钥来完成推送</p>
+<p>具体操作参照<a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">官方文档</a> 这里如果需要无过期的私钥，创建 classic 的私钥即可，把 repo 和 workflows 勾选上，然后到 a 仓库的 Secrect and action 界面填上自己的 key. 注意 title 要写成 <code>PERSONAL_TOKEN</code></p>
+<p>GitHub Free Plan 帐户不能使用私有仓库中的 GitHub 页面。要将源内容设为私有并使用 GitHub Pages 进行部署，您可以使用此选项将站点从私有存储库部署到公共存储库。</p>
+<ul>
+<li><code>peaceiris/homepage</code>: A private repository running this action with <code>external_repository: peaceiris/peaceiris.github.io</code></li>
+<li><code>peaceiris/peaceiris.github.io</code>: A public repository using GitHub Pages</li>
+</ul>
+</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/HYRuLyq.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">私钥创建
+    </div>
+</center>
+
+<ol start="4">
+<li>创建完成后, 每次推送代码到仓库 a, 代码仓库 B 都能同步更新.</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1>
 </article>
     
     
@@ -394,7 +501,6 @@
             <span data-number="02"></span>
         </h5>
     </div>
-    
     
         <div class="col-lg-6">
             <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
@@ -425,6 +531,7 @@
     </div>
 </div>
         </div>
+    
     
 </div>
 

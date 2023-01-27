@@ -7,19 +7,29 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta property="og:type" content="website">
-<meta property="og:title" content="好好吃饭， 认真生活">
-<meta property="og:url" content="https://jeffeychou.github.io/archives/2023/01/index.html">
+<meta name="description" content="cmd一键部署WSA套件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 11 安装WSA andorid 13 + play store + magisk">
+<meta property="og:url" content="https://jeffeychou.github.io/2023/01/27/Windows%2011%20%E5%AE%89%E8%A3%85WSA%20andorid%2013%20+%20play%20store%20+%20magisk/index.html">
 <meta property="og:site_name" content="好好吃饭， 认真生活">
+<meta property="og:description" content="cmd一键部署WSA套件">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/dcwqlGV.png">
+<meta property="og:image" content="https://i.imgur.com/9eocoYp.png">
+<meta property="og:image" content="https://i.imgur.com/IVIpjJM.png">
+<meta property="og:image" content="https://i.imgur.com/hAMpS9v.png">
+<meta property="og:image" content="https://i.imgur.com/cE1Og8j.png">
+<meta property="article:published_time" content="2023-01-27T11:03:41.000Z">
+<meta property="article:modified_time" content="2023-01-27T15:08:41.283Z">
 <meta property="article:author" content="周韵萱">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="WSA 安装教程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/dcwqlGV.png">
 
     <meta name="keywords" content="Blog">
 
 
-<title >好好吃饭， 认真生活</title>
+<title >Windows 11 安装WSA andorid 13 + play store + magisk</title>
 
 <!-- Favicon -->
 
@@ -195,7 +205,8 @@
             <!-- top bar end -->
 
             <!-- body -->
-            <div class="trm-content-start">
+            
+<div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
@@ -216,10 +227,10 @@
                     <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
-                            The article archive
+                            NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            云间连下榻，<br>天上接行杯。
+                            Windows 11 安装WSA andorid 13 + play store + magisk
                         </h1>
 
                         
@@ -229,7 +240,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        archives
+                                        2023
                                     </span
                                 ></li>
                             </ul>
@@ -340,133 +351,179 @@
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
-                    <div class="row">
-    <div class="col-lg-12">
-        <div class="trm-card">
-            <div style="padding: 0 20px;">
-                
-                    <ul class="row trm-list" style="margin-bottom: 0px;"><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">（3）</span></li></ul>
-                
-            </div>
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            01/27
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            11:03
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            周韵萱
         </div>
     </div>
 </div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="1-安装准备"><a href="#1-安装准备" class="headerlink" title="1.安装准备"></a>1.安装准备</h1><h3 id="1-0-操作设备规格："><a href="#1-0-操作设备规格：" class="headerlink" title="1.0 操作设备规格："></a>1.0 操作设备规格：</h3><p>本人所使用的设备操作系统信息为：<br>版本	Windows 11 专业工作站版 Insider Preview<br>版本	22H2<br>安装日期	‎1&#x2F;‎21&#x2F;‎2023<br>操作系统版本	25281.1000<br>体验	Windows Feature Experience Pack 1000.25281.1000.0<br>区域：美国</p>
+<h3 id="1-1-开启虚拟机设置"><a href="#1-1-开启虚拟机设置" class="headerlink" title="1.1 开启虚拟机设置"></a>1.1 开启虚拟机设置</h3><p>使用 <code>win</code> 键打开搜素框， 键入 <strong>windows功能</strong> ，打开设置后 选中 <em>虚拟机平台</em> , 点按确定后将提示重启设备，保存后个人工作后即可进行重启</p>
+<h3 id="1-2-安装好adb"><a href="#1-2-安装好adb" class="headerlink" title="1.2 安装好adb"></a>1.2 安装好adb</h3><p>这一步是方便后续使用WSAtools GUI 安装 APK文件</p>
+<hr>
+<h1 id="2-安装WSA"><a href="#2-安装WSA" class="headerlink" title="2. 安装WSA"></a>2. 安装WSA</h1><p>去<a target="_blank" rel="noopener" href="https://www.mediafire.com/file/obddq4979ucw2zn/WSA_2211.40000.10.0_x64_Release-Nightly-with-magisk-a468fd94(25205)-canary-MindTheGapps-13.0-RemovedAmazon.7z/file">网盘</a> 下载WSA andoroid13 预览版安装文件，下载后解压缩，重命名该文件夹为 <code>WSA</code> 方便后续使用命令行安装</p>
+<p>解压缩后打开文件夹，右键 <strong>Install.ps1</strong> 文件，选择使用power shell 运行 </p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/dcwqlGV.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">一键部署安装
+    </div>
+</center>
 
-<!-- history -->
+<p>完成后即可看到play store magisk 自动安装上去</p>
+<p>回到商店搜索 <strong>WSATools</strong> 安装即可， 这个是我们后续安装APK文件的地方</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/9eocoYp.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">WSATools
+    </div>
+</center>
 
-<div class="row">
+<p>完成打开系统搜索框，会有一个 <em>子系统设置</em> 的项目，打开。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/IVIpjJM.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">WSA设置
+    </div>
+</center>
+
+<p>进去后在 <strong>系统 -&gt; 系统资源</strong> 勾选连续，以免后续使用WSATools 时可能会出现系统调度跟不上导致无法安装apk的情况</p>
+<p>然后在 <strong>开发人员 -&gt; 开发人员模式</strong> 勾选打开。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/hAMpS9v.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">开发人员模式 
+    </div>
+</center>
+
+<p>回到系统一栏，此时点击 <strong>文件</strong> 就可以出现WSA 运行的画面，这就完成了设置</p>
+<p>然后打开 WSATools 项目，在右下角的设置图标中打开设置，配置上自己 ADB 的可执行文件路径，此时便可以使用 WSATools 安装apk 文件了</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/cE1Og8j.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">根据自己安装位置修改
+    </div>
+</center>
+
+
+</article>
+    
+    
+</div>
+<div id="post-next-prev" class="row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            
-                Archive for 2023
-            
-            <span data-number="01"></span>
+            Other Articles
+            <span data-number="02"></span>
         </h5>
     </div>
-    <div class="col-lg-12">
-        <!-- timeline -->
-        <div class="trm-timeline">
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2023/01/27/hello%20word/" class="trm-anima-link">
-                                        Hello World
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">01/27</li>
-                                        <li class="trm-accent-color">15:08</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2023/01/27/Windows%2011%20%E5%AE%89%E8%A3%85WSA%20andorid%2013%20+%20play%20store%20+%20magisk/" class="trm-anima-link">
-                                        Windows 11 安装WSA andorid 13 + play store + magisk
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">01/27</li>
-                                        <li class="trm-accent-color">11:03</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                            <div class="trm-publication trm-mt-15">
-                                cmd一键部署WSA套件
-                            </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2023/01/27/Hexo-blog-%E6%90%AD%E5%BB%BA/" class="trm-anima-link">
-                                        Hexo blog 搭建
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">01/27</li>
-                                        <li class="trm-accent-color">01:07</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                            <div class="trm-publication trm-mt-15">
-                                简单完成blog的搭建
-                            </div>
-                        
-                    
-                </div>
-            </div>
-            
+    
+        <div class="col-lg-6">
+            <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/2023/01/27/hello%20word/" class="trm-cover-frame trm-anima-link">
+        
+        
+            <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+        
+    </a>
+    <div class="trm-card-descr">
+        <div class="trm-label trm-category trm-mb-20">
+            <a href=" #.">
+                Unclassified
+            </a>
         </div>
-        <!-- timeline end -->
+        <h5>
+            <a href="/2023/01/27/hello%20word/" class="trm-anima-link">
+                Hello World
+            </a>
+        </h5>
+        <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li>23/01/27</li>
+            <li>15:08</li>
+            
+            
+        </ul>
     </div>
 </div>
-
-<!-- history end -->
-
-
-    <div class="trm-pagination">
-        <span class="page-number current">1</span>
+        </div>
+    
+    
+        <div class="col-lg-6">
+            <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/2023/01/27/Hexo-blog-%E6%90%AD%E5%BB%BA/" class="trm-cover-frame trm-anima-link">
+        
+        
+            <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+        
+    </a>
+    <div class="trm-card-descr">
+        <div class="trm-label trm-category trm-mb-20">
+            <a href=" #.">
+                Unclassified
+            </a>
+        </div>
+        <h5>
+            <a href="/2023/01/27/Hexo-blog-%E6%90%AD%E5%BB%BA/" class="trm-anima-link">
+                Hexo blog 搭建
+            </a>
+        </h5>
+        <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li>23/01/27</li>
+            <li>01:07</li>
+            
+            
+        </ul>
     </div>
+</div>
+        </div>
+    
+</div>
 
-
+    
 
 
 
@@ -510,6 +567,10 @@
             <!-- body -->
             <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
     
+        <div class="trm-fixed-btn" data-title="Read Mode" onclick="switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
     
 </div>
             <!-- body end -->
@@ -550,6 +611,9 @@
 
 
     <!-- 评论插件 -->
+    
+        
+        
     
 
 
