@@ -9,7 +9,7 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
 <meta name="description" content="简单完成blog的搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo blog 搭建">
+<meta property="og:title" content="hexo 博客快速搭建">
 <meta property="og:url" content="https://me.jiefengzhou.com/45138/index.html">
 <meta property="og:site_name" content="希君生羽翼，一化北溟鱼">
 <meta property="og:description" content="简单完成blog的搭建">
@@ -19,23 +19,25 @@
 <meta property="og:image" content="https://i.imgur.com/GJjWSJW.png">
 <meta property="og:image" content="https://i.imgur.com/HYRuLyq.png">
 <meta property="article:published_time" content="2023-01-26T17:07:49.000Z">
-<meta property="article:modified_time" content="2023-01-29T13:18:27.342Z">
+<meta property="article:modified_time" content="2023-02-03T05:23:25.000Z">
 <meta property="article:author" content="周韵萱">
-<meta property="article:tag" content="Hexo 前端 博客搭建">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.imgur.com/3JgYDst.png">
 
     <meta name="keywords" content="Blog">
 
 
-<title >Hexo blog 搭建</title>
+<title >hexo 博客快速搭建</title>
 
 <!-- Favicon -->
 
-    <link href='/img/favicon.svg?v=1.2.14' rel='icon' type='image/png' sizes='16x16' ></link>
+    <link href='/img/favicon.svg?v=2.0.0' rel='icon' type='image/png' sizes='16x16' ></link>
 
 
-    <link href='/img/favicon.svg?v=1.2.14' rel='icon' type='image/png' sizes='32x32' ></link>
+    <link href='/img/favicon.svg?v=2.0.0' rel='icon' type='image/png' sizes='32x32' ></link>
 
 
 
@@ -54,10 +56,9 @@
     
 <link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
 
-
+    
     
 
-    
 
 
 
@@ -70,10 +71,11 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"me.jiefengzhou.com","author":"周韵萱","root":"/","typed_text":["始知锁向金笼听，不及山林自在啼。"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)Hey! Good again!","hideText":"(●—●)Oh, crash!"},"theme_version":"1.2.14","theme":{"switch":true,"default":"style-dark"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_button":"Copy","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":false},"swup":false,"plugin":{"flickr_justified_gallery":{"js":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"fancybox":{"css":"https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css","js":"https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"}},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h"}};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"me.jiefengzhou.com","author":"周韵萱","root":"/","typed_text":["始知锁向金笼听，不及山林自在啼。"],"theme_version":"2.0.0","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)Hey! Good again!","hideText":"(●—●)Oh, crash!"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-02-03 13:23:25"};</script>
 
 <!-- Theme mode css -->
-<link data-swup-theme rel="stylesheet" href="/css/index.css?v=1.2.14" id="trm-switch-style">
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.0.0" id="trm-switch-style">
 <script>
     let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
     let catchMode = localStorage.getItem('theme-mode') || defaultMode;
@@ -85,7 +87,6 @@
 
 
     
-
     
 
 
@@ -133,87 +134,81 @@
         <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
           <div data-scroll-section id="content" class="trm-scroll-section">
 
-            <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
 
             <!-- top bar -->
             <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
 	<div class="container">
 		<div class="trm-left-side">
 			<!-- logo -->
-			<a href="/" class="trm-logo-frame trm-anima-link">
-				
-					<img alt="logo" src="/img/favicon.svg">
-				
-				
-					<div class="trm-logo-text">
-						Chou<span>Jeffrey</span>
-					</div>
-				
-			</a>
-			<!-- logo end -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Chou<span>Jeffrey</span>
+        </div>
+    
+</a>
+<!-- logo end -->
 		</div>
 		<div class="trm-right-side">
-
 			<!-- menu -->
-			<div class="trm-menu">
-				<nav>
-					<ul>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/" target="">
-								Home
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/archives/" target="">
-								Archives
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/links/" target="">
-								Links
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/about/" target="">
-								About
-							</a>
-							
-						</li>
-						
-					</ul>
-				</nav>
-			</div>
-			<!-- menu end -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    Archives
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    About
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
 			
-			<!-- mode switcher place -->
-			
-			<div class="trm-mode-switcher-place">
-				<!-- <div class="trm-hidden-switcher"> -->
-					<div class="trm-mode-switcher">
-					  <i class="iconfont far fa-sun"></i>
-					  <input class="tgl tgl-light" id="trm-swich" type="checkbox">
-					  <label class="trm-swich" for="trm-swich"></label>
-					  <i class="iconfont far fa-moon"></i>
-					</div>
-				  <!-- </div> -->
-			</div>
-			
-			<!-- mode switcher place end -->
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
 
 			
-				
-				<div id="trm-search-btn" class="trm-search-btn">
-					<i class="iconfont fas fa-search"></i>
-				</div>
-				 
-			 
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
 
 		</div>
 		<div class="trm-menu-btn">
@@ -249,7 +244,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            Hexo blog 搭建
+                            hexo 博客快速搭建
                         </h1>
 
                         
@@ -310,19 +305,18 @@
         周韵萱
     </h5>
     
-    <div class="trm-label">
-        
-        <span class="trm-typed-text">
-            <!-- Words for theme.user.typedText -->
-        </span>
-    </div>
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
     
 </div>
 <!-- card header end -->
+                <!-- sidebar social -->
 
-<!-- sidebar social -->
 <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-
 <div class="trm-social">
     
         <a href="https://github.com/JeffeyChou" title="Github" rel="nofollow" target="_blank">
@@ -332,8 +326,7 @@
 </div>
 
 <!-- sidebar social end -->
-
-<!-- info -->
+                <!-- info -->
 <div class="trm-divider trm-mb-40 trm-mt-40"></div>
 <ul class="trm-table trm-mb-20">
     
@@ -365,22 +358,23 @@
         </li>
     
 </ul>
-
 <!-- info end -->
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<!-- action button -->
-<div class="text-center">
-    <a href="mailto:littcal@foxmail.com (小号防炸)" class="trm-btn">
-        Contact Me
-        <i class="iconfont far fa-envelope"></i>
-    </a>
-</div>
-<!-- action button end -->
+
+                
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:littcal@foxmail.com (小号防炸)" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
 
             </div>
             <div name="tabs-toc" class="trm-tabs-item active">
                 <div class="post-toc">
-    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#快速开始"  data-scroll-to="#快速开始"><span class="toc-number">1.</span> <span class="toc-text"> 快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#安装-hexo"  data-scroll-to="#安装-hexo"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 安装 Hexo</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#初始化项目"  data-scroll-to="#初始化项目"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 初始化项目</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#安装第三方主题"  data-scroll-to="#安装第三方主题"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 安装第三方主题</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#配置第三方主题"  data-scroll-to="#配置第三方主题"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 配置第三方主题</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#快速本地部署"  data-scroll-to="#快速本地部署"><span class="toc-number">1.0.5.</span> <span class="toc-text"> 快速本地部署</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#2-将网页部署到-githubio"  data-scroll-to="#2-将网页部署到-githubio"><span class="toc-number">2.</span> <span class="toc-text"> 2 将网页部署到 github.io</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#创建仓库"  data-scroll-to="#创建仓库"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 创建仓库</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#配置-github-action"  data-scroll-to="#配置-github-action"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 配置 GitHub Action</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#reference"  data-scroll-to="#reference"><span class="toc-number">3.</span> <span class="toc-text"> Reference</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#快速开始"  data-scroll-to="#快速开始"><span class="toc-number">1.</span> <span class="toc-text"> 快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#安装-hexo"  data-scroll-to="#安装-hexo"><span class="toc-number">1.1.</span> <span class="toc-text"> 安装 Hexo</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#初始化项目"  data-scroll-to="#初始化项目"><span class="toc-number">1.2.</span> <span class="toc-text"> 初始化项目</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#安装第三方主题"  data-scroll-to="#安装第三方主题"><span class="toc-number">1.3.</span> <span class="toc-text"> 安装第三方主题</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#配置第三方主题"  data-scroll-to="#配置第三方主题"><span class="toc-number">1.4.</span> <span class="toc-text"> 配置第三方主题</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#快速本地部署"  data-scroll-to="#快速本地部署"><span class="toc-number">1.5.</span> <span class="toc-text"> 快速本地部署</span></a></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#2-将网页部署到-githubio"  data-scroll-to="#2-将网页部署到-githubio"><span class="toc-number">2.</span> <span class="toc-text"> 2 将网页部署到 github.io</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#创建仓库"  data-scroll-to="#创建仓库"><span class="toc-number">2.1.</span> <span class="toc-text"> 创建仓库</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#配置-github-action"  data-scroll-to="#配置-github-action"><span class="toc-number">2.2.</span> <span class="toc-text"> 配置 GitHub Action</span></a></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#reference"  data-scroll-to="#reference"><span class="toc-number">3.</span> <span class="toc-text"> Reference</span></a></li></ol>
 </div>
             </div>
         </div>
@@ -420,33 +414,33 @@
 <p>‌‌‌ 　　首先确保您的设备上安装了相关软件，包括以下应用程序[^1]：</p>
 <p>‌‌‌ 　　- Node.js (按目前来说应该是 16.x 以上的版本)<br />
 ‌‌‌ 　　- Git</p>
-<h3 id="安装-hexo"><a class="markdownIt-Anchor" href="#安装-hexo"></a> 安装 Hexo</h3>
+<h2 id="安装-hexo"><a class="markdownIt-Anchor" href="#安装-hexo"></a> 安装 Hexo</h2>
 <p>‌‌‌ 　　完成所有必需的软件安装后，即可以使用 npm 安装 Hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‌‌‌　　npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="初始化项目"><a class="markdownIt-Anchor" href="#初始化项目"></a> 初始化项目</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">‌‌‌　　npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+<h2 id="初始化项目"><a class="markdownIt-Anchor" href="#初始化项目"></a> 初始化项目</h2>
 <p>‌‌‌ 　　在您想存放博客文件的地方使用命令行在该位置打开。使用以下命令以创建一个 Hexo 项目：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‌‌‌　　hexo init Blog</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo init Blog<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　这样便在当前文件夹下创建了一个名为<code>blog</code>的文件夹，该位置便是您博客的根目录</p>
-<h3 id="安装第三方主题"><a class="markdownIt-Anchor" href="#安装第三方主题"></a> 安装第三方主题</h3>
+<h2 id="安装第三方主题"><a class="markdownIt-Anchor" href="#安装第三方主题"></a> 安装第三方主题</h2>
 <p>‌‌‌ 　　在 Hexo 5.0 版本上，可以使用 npm 安装主题。以<a target="_blank" rel="noopener" href="https://github.com/MaLuns/hexo-theme-async/blob/master/README_zh-CN.md">hexo-theme-async</a> 为例[^2]：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‌‌‌　　npm i hexo-theme-async@latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">‌‌‌　　npm i hexo-theme-async@latest<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>注意, 有些主题可能需要安装其他依赖才能正确显示, 为确保正确安装, 请参考对应主题的官方安装文档操作<br />
 如 async 主题需要 <code>ejs</code> 和 <code>less</code> 的渲染器, 需要提前安装好.</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‌‌‌　　npm install --save hexo-renderer-less hexo-renderer-ejs</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">‌‌‌　　npm install --save hexo-renderer-less hexo-renderer-ejs<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　安装完成后在根目录下的<code>_congif.yml</code>中修改 <code>theme</code> 字段为 <code>async</code></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">theme:</span> <span class="string">async</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置第三方主题"><a class="markdownIt-Anchor" href="#配置第三方主题"></a> 配置第三方主题</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># Extensions</span><br><span class="hljs-comment">## Plugins: https://hexo.io/plugins/</span><br><span class="hljs-comment">## Themes: https://hexo.io/themes/</span><br><span class="hljs-string">‌‌‌</span>　　<span class="hljs-attr">theme:</span> <span class="hljs-string">async</span><br></code></pre></td></tr></table></figure>
+<h2 id="配置第三方主题"><a class="markdownIt-Anchor" href="#配置第三方主题"></a> 配置第三方主题</h2>
 <p>‌‌‌ 　　使用 npm 安装的第三方主题修改配置需要在根目录下新建文件<code>_config.async.yml</code> 具体名称需要根据您所安装的主题修改, 我这里使用的是<code>async</code>主题, 所以配置文件含有 <strong>async</strong> 字段<br />
 ‌‌‌ 　　您仅需在  <code>_config.async.yml</code>  中自定义您想要覆盖的配置，其余将自动与主题默认配置合并.<br />
 ‌‌‌ 　　为确保您能正确了解主题的所有配置, 建议是到主题的源码处复制对应的<a target="_blank" rel="noopener" href="https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/_config.yml">yaml 配置文件</a></p>
-<h3 id="快速本地部署"><a class="markdownIt-Anchor" href="#快速本地部署"></a> 快速本地部署</h3>
+<h2 id="快速本地部署"><a class="markdownIt-Anchor" href="#快速本地部署"></a> 快速本地部署</h2>
 <p>‌‌‌ 　　在博客的根目录下使用命令:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‌‌‌　　hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo g<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　即可完成对博客的静态网页编译(generate)</p>
 <p>‌‌‌ 　　而使用命令:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‌‌‌　　hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo s<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　即可在本地完成部署, 成功后会显示:</p>
 <p>‌‌‌ 　　<center><br />
 <img style="border-radius: 0.3125em;
@@ -472,13 +466,13 @@
 </div>
 ‌‌‌ 　　</center>
 <p>‌‌‌ 　　若要清除编译后的静态网页, 使用以下命令:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‌‌‌　　hexo c</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo c<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　此时, 博客根目录下的 <code>/public</code> 目录便被删除</p>
 <hr />
 <h1 id="2-将网页部署到-githubio"><a class="markdownIt-Anchor" href="#2-将网页部署到-githubio"></a> 2 将网页部署到 <a target="_blank" rel="noopener" href="http://github.io">github.io</a></h1>
 <p>‌‌‌ 　　静态博客在网络上发布的一般流程是: <strong>写好文章-&gt; 本地生成静态页面 -&gt; 将网站所需要的文件单独上传 -&gt; 发布成功 -&gt;(可选)上传完整站点数据备份。</strong></p>
 <p>‌‌‌ 　　为简化我们操作, 回归专心于写作, 我将其简化成如下工作流: <strong>本地上传仓库 a -&gt; github action 自动部署 -&gt; 推送到仓库 b，网站展示</strong> [^3]</p>
-<h3 id="创建仓库"><a class="markdownIt-Anchor" href="#创建仓库"></a> 创建仓库</h3>
+<h2 id="创建仓库"><a class="markdownIt-Anchor" href="#创建仓库"></a> 创建仓库</h2>
 <p>‌‌‌ 　　这里的两个仓库 a, b 分别储存博客的完整源代码, 博客静态编译后的用于发布展示的代码<br />
 ‌‌‌ 　　由于使用 Github action 需要使用到自己的私钥,强烈建议仓库 a 设置为私有, 而仓库 b 可以凭个人喜好设置为公有或者私有</p>
 <p>‌‌‌ 　　 1. 在自己的 github 账号上创建两个仓库, 其中用于展示发布的仓库 b 的仓库名设置为 <code>您的GitHub用户名.github.io</code> . 这样是方便后续我们使用 <code>用户名.github.io</code> 来访问博客</p>
@@ -495,10 +489,10 @@
 </div>
 ‌‌‌ 　　</center>
 <p>‌‌‌ 　　完成后打开网页即可查看自己的推送结果</p>
-<h3 id="配置-github-action"><a class="markdownIt-Anchor" href="#配置-github-action"></a> 配置 GitHub Action</h3>
+<h2 id="配置-github-action"><a class="markdownIt-Anchor" href="#配置-github-action"></a> 配置 GitHub Action</h2>
 <p>‌‌‌ 　　 1. 这里我使用了 <code>peaceiris/actions-gh-pages</code> 的配置文件,在根目录下的 <code>.github</code> 目录下创建文件夹 <code>workflow</code> ,然后在该文件夹下创建新的<code>.yml</code> 文件<br />
 将对应的配置代码写进去即可</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span> <span class="string">Pages</span></span><br><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;master&quot;</span></span><br><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repositories</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">submodules:</span> <span class="literal">true</span> <span class="comment"># Fetch Hexo themes (true OR recursive)</span></span><br><span class="line">          <span class="attr">fetch-depth:</span> <span class="number">0</span> <span class="comment"># Fetch all history for .GitInfo and .Lastmod</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">16.</span><span class="string">x</span> <span class="comment"># 这里填上您设备对应的Node.js 版本</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">yarn</span> <span class="string">&amp;</span> <span class="string">Install</span> <span class="string">node_modules</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">borales/actions-yarn@v4</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">cmd:</span> <span class="string">install</span> <span class="comment"># will run `yarn install` command</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line">          <span class="string">yarn</span> <span class="string">clean</span></span><br><span class="line">          <span class="string">yarn</span> <span class="string">build</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">&lt;username&gt;/&lt;username&gt;.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">master</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">‌‌‌　　name: Deploy Hexo Pages<br>‌‌‌　　on:<br>  push:<br>    branches:<br>      - &quot;master&quot;<br>‌‌‌　　jobs:<br>  deploy:<br>    runs-on: ubuntu-latest<br>    steps:<br>      - name: Checkout repositories<br>        uses: actions/checkout@v3<br>        with:<br>          submodules: true # Fetch Hexo themes (true OR recursive)<br>          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod<br>      - name: Setup node<br>        uses: actions/setup-node@v3<br>        with:<br>          node-version: 16.x # 这里填上您设备对应的Node.js 版本<br>      - name: Setup yarn &amp; Install node_modules<br>        uses: borales/actions-yarn@v4<br>        with:<br>          cmd: install # will run `yarn install` command<br>      - name: Build<br>        run: |<br>          yarn clean<br>          yarn build<br>      - name: Deploy<br>        uses: peaceiris/actions-gh-pages@v3<br>        with:<br>          personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;<br>          external_repository: &lt;username&gt;/&lt;username&gt;.github.io<br>          publish_branch: master<br>          publish_dir: ./public<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　 2. 根据自己情况修改<code>jobs:steps:uses</code>和<code>external_repository:(代码仓库b的地址)</code>即可。</p>
 <p>‌‌‌ 　　 3. 注意到配置文件中有一个<code>personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;</code>，我们需要创建个人私钥来完成推送</p>
 <p>具体操作参照<a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">官方文档</a> 这里如果需要无过期的私钥，创建 classic 的私钥即可，把 repo 和 workflows 勾选上，然后到 a 仓库的 Secrect and action 界面填上自己的 key. 注意 title 要写成 <code>PERSONAL_TOKEN</code></p>
@@ -520,9 +514,9 @@
 ‌‌‌ 　　</center>
 <p>‌‌‌ 　　 4. 创建完成后, 每次推送代码到仓库 a, 代码仓库 B 都能同步更新.</p>
 <h1 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h1>
-<p>‌‌‌ 　　[^1]: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br />
-‌‌‌ 　　[^2]: <a target="_blank" rel="noopener" href="https://blog.esunr.xyz/2022/06/64163235c30f.html">https://blog.esunr.xyz/2022/06/64163235c30f.html</a><br />
-‌‌‌ 　　[^3]: <a target="_blank" rel="noopener" href="https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/">https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/</a><br />
+<p>‌‌‌ 　　:[^4] <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br />
+‌‌‌ 　　:[^5] <a target="_blank" rel="noopener" href="https://blog.esunr.xyz/2022/06/64163235c30f.html">https://blog.esunr.xyz/2022/06/64163235c30f.html</a><br />
+‌‌‌ 　　:[^6] <a target="_blank" rel="noopener" href="https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/">https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/</a><br />
 ‌‌‌</p>
 
 </article>
@@ -536,7 +530,7 @@
     </li>
     <li class="trm-post-copyright-link">
         <strong>Post link: </strong>
-        <a id="original-link" href="https://me.jiefengzhou.com/45138/" title="Hexo blog 搭建">https://me.jiefengzhou.com/45138/</a>
+        <a id="original-link" href="https://me.jiefengzhou.com/45138/" title="hexo 博客快速搭建">https://me.jiefengzhou.com/45138/</a>
     </li>
     <li class="trm-post-copyright-license">
         <strong>Copyright Notice: </strong>
@@ -555,24 +549,24 @@
     </div>
     
         <div class="col-lg-6">
-            <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
-    <div class="trm-older-publication">
-        
-        <a class="trm-op-top trm-anima-link" href="/24452/">
-            <span class="trm-op-cover">
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            </span>
-            <h6 class="trm-op-title">Windows 11 安装WSA andorid 13 + play store + magisk</h6>
-        </a>
-        <div class="trm-divider trm-mb-15 trm-mt-20"></div>
-        <ul class="trm-card-data trm-label">
-            <li>23/01/27</li>
-            <li>11:03</li>
-            <li>Unclassified</li>
-        </ul>
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/24452/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                </span>
+                <h6 class="trm-op-title">Windows 11 安装WSA andorid 13 + play store + magisk</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/01/27</li>
+                <li>11:03</li>
+                <li>Software</li>
+            </ul>
+        </div>
     </div>
 </div>
-        </div>
     
     
 </div>
@@ -605,7 +599,7 @@
             <span> 
                 Theme - 
                 <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
-                v1.2.14
+                v2.0.0
             </span>
         </div>
       
@@ -625,11 +619,11 @@
 
 <script>
     function show_date_time () {
-        BirthDay = new Date("01/26/2023 01:00:00");
-        today = new Date();
-        timeold = (today.getTime() - BirthDay.getTime());
-        msPerDay = 24 * 60 * 60 * 1000
-        day = Math.floor(timeold / msPerDay)
+        var BirthDay = new Date("01/26/2023 01:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
         since.innerHTML = day
     }
     show_date_time()
@@ -644,16 +638,14 @@
 </div>
             <!-- body end -->
 
-            <!-- body -->
             <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
     
-        <div class="trm-fixed-btn" data-title="Read Mode" onclick="switchReadMode()">
+        <div class="trm-fixed-btn" data-title="Read Mode" onclick="asyncFun.switchReadMode()">
             <i class="iconfont fas fa-book-reader"></i>
         </div>
     
     
 </div>
-            <!-- body end -->
           </div>
         </div>
       </div>
@@ -684,36 +676,34 @@
 
 
 
-    
-    
 
+    
     
 <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
     
 <script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
-
     
 
     
-        <script src="/js/plugins/typing.js?v=1.2.14"></script>
+        <script src="/js/plugins/typing.js?v=2.0.0"></script>
     
 
     
         
 <script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
 
-        <script src="/js/plugins/local_search.js?v=1.2.14"></script>
+        <script src="/js/plugins/local_search.js?v=2.0.0"></script>
     
 
     <!-- 数学公式 -->
     
 
-
     <!-- 评论插件 -->
     
         
+
         
     
 
@@ -737,8 +727,8 @@
     
 
 
-<script id="async-script" src="/js/main.js?v=1.2.14"></script>
+<script id="async-script" src="/js/main.js?v=2.0.0"></script>
 
-</body>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"react":{"opacity":0.7},"dialog":{"enable":true,"hitokoto":true},"log":false});</script></body>
 
 </html>

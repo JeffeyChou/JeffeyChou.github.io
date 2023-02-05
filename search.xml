@@ -1,67 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Debian 删除apache2</title>
-    <url>/20915/</url>
-    <content><![CDATA[<p>首先停止apache2 服务</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service apache2 stop</span><br></pre></td></tr></table></figure>
-<p>使用命令查看到服务已经停止。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl status apache2 </span><br></pre></td></tr></table></figure>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/Iu3vS6E.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">停止运行apache
-    </div>
-</center>
-<p>依次输入如下命令删除apache2对应的文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt --purge remove apache2 -y</span><br><span class="line">apt --purge remove apache2-doc -y</span><br><span class="line">apt --purge remove apache2-data -y</span><br><span class="line">apt --purge remove apache2-bin -y</span><br><span class="line">apt --purge remove apache2-utils -y</span><br></pre></td></tr></table></figure>
-<p>检查是否有残留文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dpkg -l | grep apache2</span><br></pre></td></tr></table></figure>
-<p>当显示没有文件存在时(显示空白，没有任何输出)表明卸载完成。</p>
-]]></content>
-      <tags>
-        <tag>Debian Linus apache nginx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo blog 搭建</title>
+    <title>hexo 博客快速搭建</title>
     <url>/45138/</url>
     <content><![CDATA[<h1 id="快速开始"><a class="markdownIt-Anchor" href="#快速开始"></a> 快速开始</h1>
 <p>‌‌‌ 　　首先确保您的设备上安装了相关软件，包括以下应用程序[^1]：</p>
 <p>‌‌‌ 　　- Node.js (按目前来说应该是 16.x 以上的版本)<br />
 ‌‌‌ 　　- Git</p>
-<h3 id="安装-hexo"><a class="markdownIt-Anchor" href="#安装-hexo"></a> 安装 Hexo</h3>
+<h2 id="安装-hexo"><a class="markdownIt-Anchor" href="#安装-hexo"></a> 安装 Hexo</h2>
 <p>‌‌‌ 　　完成所有必需的软件安装后，即可以使用 npm 安装 Hexo</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">‌‌‌　　npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="初始化项目"><a class="markdownIt-Anchor" href="#初始化项目"></a> 初始化项目</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">‌‌‌　　npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+<h2 id="初始化项目"><a class="markdownIt-Anchor" href="#初始化项目"></a> 初始化项目</h2>
 <p>‌‌‌ 　　在您想存放博客文件的地方使用命令行在该位置打开。使用以下命令以创建一个 Hexo 项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">‌‌‌　　hexo init Blog</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo init Blog<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　这样便在当前文件夹下创建了一个名为<code>blog</code>的文件夹，该位置便是您博客的根目录</p>
-<h3 id="安装第三方主题"><a class="markdownIt-Anchor" href="#安装第三方主题"></a> 安装第三方主题</h3>
+<h2 id="安装第三方主题"><a class="markdownIt-Anchor" href="#安装第三方主题"></a> 安装第三方主题</h2>
 <p>‌‌‌ 　　在 Hexo 5.0 版本上，可以使用 npm 安装主题。以<a href="https://github.com/MaLuns/hexo-theme-async/blob/master/README_zh-CN.md">hexo-theme-async</a> 为例[^2]：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">‌‌‌　　npm i hexo-theme-async@latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">‌‌‌　　npm i hexo-theme-async@latest<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>注意, 有些主题可能需要安装其他依赖才能正确显示, 为确保正确安装, 请参考对应主题的官方安装文档操作<br />
 如 async 主题需要 <code>ejs</code> 和 <code>less</code> 的渲染器, 需要提前安装好.</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">‌‌‌　　npm install --save hexo-renderer-less hexo-renderer-ejs</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">‌‌‌　　npm install --save hexo-renderer-less hexo-renderer-ejs<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　安装完成后在根目录下的<code>_congif.yml</code>中修改 <code>theme</code> 字段为 <code>async</code></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">theme:</span> <span class="string">async</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置第三方主题"><a class="markdownIt-Anchor" href="#配置第三方主题"></a> 配置第三方主题</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># Extensions</span><br><span class="hljs-comment">## Plugins: https://hexo.io/plugins/</span><br><span class="hljs-comment">## Themes: https://hexo.io/themes/</span><br><span class="hljs-string">‌‌‌</span>　　<span class="hljs-attr">theme:</span> <span class="hljs-string">async</span><br></code></pre></td></tr></table></figure>
+<h2 id="配置第三方主题"><a class="markdownIt-Anchor" href="#配置第三方主题"></a> 配置第三方主题</h2>
 <p>‌‌‌ 　　使用 npm 安装的第三方主题修改配置需要在根目录下新建文件<code>_config.async.yml</code> 具体名称需要根据您所安装的主题修改, 我这里使用的是<code>async</code>主题, 所以配置文件含有 <strong>async</strong> 字段<br />
 ‌‌‌ 　　您仅需在  <code>_config.async.yml</code>  中自定义您想要覆盖的配置，其余将自动与主题默认配置合并.<br />
 ‌‌‌ 　　为确保您能正确了解主题的所有配置, 建议是到主题的源码处复制对应的<a href="https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/_config.yml">yaml 配置文件</a></p>
-<h3 id="快速本地部署"><a class="markdownIt-Anchor" href="#快速本地部署"></a> 快速本地部署</h3>
+<h2 id="快速本地部署"><a class="markdownIt-Anchor" href="#快速本地部署"></a> 快速本地部署</h2>
 <p>‌‌‌ 　　在博客的根目录下使用命令:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">‌‌‌　　hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo g<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　即可完成对博客的静态网页编译(generate)</p>
 <p>‌‌‌ 　　而使用命令:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">‌‌‌　　hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo s<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　即可在本地完成部署, 成功后会显示:</p>
 <p>‌‌‌ 　　<center><br />
 <img style="border-radius: 0.3125em;
@@ -87,13 +59,13 @@
 </div>
 ‌‌‌ 　　</center>
 <p>‌‌‌ 　　若要清除编译后的静态网页, 使用以下命令:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">‌‌‌　　hexo c</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">‌‌‌　　hexo c<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　此时, 博客根目录下的 <code>/public</code> 目录便被删除</p>
 <hr />
 <h1 id="2-将网页部署到-githubio"><a class="markdownIt-Anchor" href="#2-将网页部署到-githubio"></a> 2 将网页部署到 <a href="http://github.io">github.io</a></h1>
 <p>‌‌‌ 　　静态博客在网络上发布的一般流程是: <strong>写好文章-&gt; 本地生成静态页面 -&gt; 将网站所需要的文件单独上传 -&gt; 发布成功 -&gt;(可选)上传完整站点数据备份。</strong></p>
 <p>‌‌‌ 　　为简化我们操作, 回归专心于写作, 我将其简化成如下工作流: <strong>本地上传仓库 a -&gt; github action 自动部署 -&gt; 推送到仓库 b，网站展示</strong> [^3]</p>
-<h3 id="创建仓库"><a class="markdownIt-Anchor" href="#创建仓库"></a> 创建仓库</h3>
+<h2 id="创建仓库"><a class="markdownIt-Anchor" href="#创建仓库"></a> 创建仓库</h2>
 <p>‌‌‌ 　　这里的两个仓库 a, b 分别储存博客的完整源代码, 博客静态编译后的用于发布展示的代码<br />
 ‌‌‌ 　　由于使用 Github action 需要使用到自己的私钥,强烈建议仓库 a 设置为私有, 而仓库 b 可以凭个人喜好设置为公有或者私有</p>
 <p>‌‌‌ 　　 1. 在自己的 github 账号上创建两个仓库, 其中用于展示发布的仓库 b 的仓库名设置为 <code>您的GitHub用户名.github.io</code> . 这样是方便后续我们使用 <code>用户名.github.io</code> 来访问博客</p>
@@ -110,10 +82,10 @@
 </div>
 ‌‌‌ 　　</center>
 <p>‌‌‌ 　　完成后打开网页即可查看自己的推送结果</p>
-<h3 id="配置-github-action"><a class="markdownIt-Anchor" href="#配置-github-action"></a> 配置 GitHub Action</h3>
+<h2 id="配置-github-action"><a class="markdownIt-Anchor" href="#配置-github-action"></a> 配置 GitHub Action</h2>
 <p>‌‌‌ 　　 1. 这里我使用了 <code>peaceiris/actions-gh-pages</code> 的配置文件,在根目录下的 <code>.github</code> 目录下创建文件夹 <code>workflow</code> ,然后在该文件夹下创建新的<code>.yml</code> 文件<br />
 将对应的配置代码写进去即可</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span> <span class="string">Pages</span></span><br><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;master&quot;</span></span><br><span class="line"><span class="string">‌‌‌</span>　　<span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">repositories</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">submodules:</span> <span class="literal">true</span> <span class="comment"># Fetch Hexo themes (true OR recursive)</span></span><br><span class="line">          <span class="attr">fetch-depth:</span> <span class="number">0</span> <span class="comment"># Fetch all history for .GitInfo and .Lastmod</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">16.</span><span class="string">x</span> <span class="comment"># 这里填上您设备对应的Node.js 版本</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">yarn</span> <span class="string">&amp;</span> <span class="string">Install</span> <span class="string">node_modules</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">borales/actions-yarn@v4</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">cmd:</span> <span class="string">install</span> <span class="comment"># will run `yarn install` command</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line">          <span class="string">yarn</span> <span class="string">clean</span></span><br><span class="line">          <span class="string">yarn</span> <span class="string">build</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">&lt;username&gt;/&lt;username&gt;.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">master</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">‌‌‌　　name: Deploy Hexo Pages<br>‌‌‌　　on:<br>  push:<br>    branches:<br>      - &quot;master&quot;<br>‌‌‌　　jobs:<br>  deploy:<br>    runs-on: ubuntu-latest<br>    steps:<br>      - name: Checkout repositories<br>        uses: actions/checkout@v3<br>        with:<br>          submodules: true # Fetch Hexo themes (true OR recursive)<br>          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod<br>      - name: Setup node<br>        uses: actions/setup-node@v3<br>        with:<br>          node-version: 16.x # 这里填上您设备对应的Node.js 版本<br>      - name: Setup yarn &amp; Install node_modules<br>        uses: borales/actions-yarn@v4<br>        with:<br>          cmd: install # will run `yarn install` command<br>      - name: Build<br>        run: |<br>          yarn clean<br>          yarn build<br>      - name: Deploy<br>        uses: peaceiris/actions-gh-pages@v3<br>        with:<br>          personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;<br>          external_repository: &lt;username&gt;/&lt;username&gt;.github.io<br>          publish_branch: master<br>          publish_dir: ./public<br></code></pre></td></tr></table></figure>
 <p>‌‌‌ 　　 2. 根据自己情况修改<code>jobs:steps:uses</code>和<code>external_repository:(代码仓库b的地址)</code>即可。</p>
 <p>‌‌‌ 　　 3. 注意到配置文件中有一个<code>personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;</code>，我们需要创建个人私钥来完成推送</p>
 <p>具体操作参照<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">官方文档</a> 这里如果需要无过期的私钥，创建 classic 的私钥即可，把 repo 和 workflows 勾选上，然后到 a 仓库的 Secrect and action 界面填上自己的 key. 注意 title 要写成 <code>PERSONAL_TOKEN</code></p>
@@ -135,93 +107,230 @@
 ‌‌‌ 　　</center>
 <p>‌‌‌ 　　 4. 创建完成后, 每次推送代码到仓库 a, 代码仓库 B 都能同步更新.</p>
 <h1 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h1>
-<p>‌‌‌ 　　[^1]: <a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br />
-‌‌‌ 　　[^2]: <a href="https://blog.esunr.xyz/2022/06/64163235c30f.html">https://blog.esunr.xyz/2022/06/64163235c30f.html</a><br />
-‌‌‌ 　　[^3]: <a href="https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/">https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/</a><br />
+<p>‌‌‌ 　　:[^4] <a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br />
+‌‌‌ 　　:[^5] <a href="https://blog.esunr.xyz/2022/06/64163235c30f.html">https://blog.esunr.xyz/2022/06/64163235c30f.html</a><br />
+‌‌‌ 　　:[^6] <a href="https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/">https://allworldg.xyz/dev/guide-to-setup-blog-with-zero-cost-1/</a><br />
 ‌‌‌</p>
 ]]></content>
+      <categories>
+        <category>Blog_Dev</category>
+      </categories>
       <tags>
-        <tag>Hexo 前端 博客搭建</tag>
+        <tag>Hexo</tag>
+        <tag>前端</tag>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
-    <title>OVZ机型迅速搭建x-ui面板搭建梯子</title>
-    <url>/47675/</url>
-    <content><![CDATA[<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h1>
-<h3 id="vps-准备"><a class="markdownIt-Anchor" href="#vps-准备"></a> VPS 准备</h3>
-<h4 id="购买vps"><a class="markdownIt-Anchor" href="#购买vps"></a> 购买VPS</h4>
-<h4 id="开始tuntap"><a class="markdownIt-Anchor" href="#开始tuntap"></a> 开始TUN/TAP</h4>
-<h3 id="域名准备"><a class="markdownIt-Anchor" href="#域名准备"></a> 域名准备</h3>
-<h4 id="购买域名"><a class="markdownIt-Anchor" href="#购买域名"></a> 购买域名</h4>
-<h4 id="迁移域名到cloudflare解析"><a class="markdownIt-Anchor" href="#迁移域名到cloudflare解析"></a> 迁移域名到cloudflare解析</h4>
-<h4 id="设置二级域名解析"><a class="markdownIt-Anchor" href="#设置二级域名解析"></a> 设置二级域名解析</h4>
-<h3 id="ssh-工具"><a class="markdownIt-Anchor" href="#ssh-工具"></a> SSH 工具</h3>
-<hr />
-<h1 id="系统初始化"><a class="markdownIt-Anchor" href="#系统初始化"></a> 系统初始化</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新软件源</span></span><br><span class="line">apt update -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加shots NDS解析记录（防止ipv6解析失败403)</span></span><br><span class="line"><span class="comment"># 这一步暂时跳过，如果后面使用wget命令</span></span><br><span class="line"><span class="comment"># 运行别人的脚本时发现一直在连接</span></span><br><span class="line"><span class="comment"># 且连接的域名ip为ipv6</span></span><br><span class="line"><span class="comment"># 可以添加对应的ipv4地址到hosts</span></span><br><span class="line"><span class="comment"># 最后刷新DNS缓存</span></span><br><span class="line">vim /etc/hosts</span><br><span class="line"></span><br><span class="line"><span class="comment"># OVZ配置BBR</span></span><br><span class="line">wget --no-cache -O lkl-haproxy.sh https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy.sh &amp;&amp; bash lkl-haproxy.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 x-ui</span></span><br><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载apache2（部分debian机型重装自带）</span></span><br><span class="line"><span class="comment"># 最后一条命令是检查有没有残留，如果有继续使用命令删除</span></span><br><span class="line">service apache2 stop</span><br><span class="line">apt --purge remove apache2 -y</span><br><span class="line">apt --purge remove apache2-doc -y</span><br><span class="line">apt --purge remove apache2-data -y</span><br><span class="line">apt --purge remove apache2-bin -y</span><br><span class="line">apt --purge remove apache2-utils -y</span><br><span class="line">dpkg -l | grep apache2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装nginx</span></span><br><span class="line">apt install nginx</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装acme： </span></span><br><span class="line">curl https://get.acme.sh | sh </span><br><span class="line"></span><br><span class="line"><span class="comment">#添加软链接： </span></span><br><span class="line"><span class="built_in">ln</span> -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh </span><br><span class="line"></span><br><span class="line"><span class="comment">#切换CA机构： </span></span><br><span class="line">acme.sh --set-default-ca --server letsencrypt </span><br><span class="line"></span><br><span class="line"><span class="comment">#申请证书： </span></span><br><span class="line"><span class="comment"># 域名可以是二级域名</span></span><br><span class="line">acme.sh --issue -d vps.jiefengzhou.com -k ec-256 --webroot /var/www/html</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装证书&amp;重载nginx:</span></span><br><span class="line">acme.sh --install-cert -d vps.jiefengzhou.com --ecc --key-file /etc/x-ui/server.key --fullchain-file /etc/x-ui/server.crt --reloadcmd <span class="string">&quot;systemctl force-reload nginx&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>host更改教程：[[<a href="http://xn--VPSraw-kb9lk1m8utuu6f.githubusercontent.com">VPS无法连接raw.githubusercontent.com</a> 解决方法]]<br />
-BBR加速配置： [[OpenVZ 机型vps 开启BBR加速]]<br />
-删除apache2： [[Debian 删除apache2]]</p>
-</blockquote>
+    <title>南门探店-小煲贝</title>
+    <url>/3/</url>
+    <content><![CDATA[<h1 id="位置-location"><a class="markdownIt-Anchor" href="#位置-location"></a> 位置 Location</h1>
+<ul>
+<li>评分：8/10
+<ul>
+<li>出门就到，从宿舍出门扫单车骑1.7公里大概8分钟再出门走路2分钟可以到达。</li>
+</ul>
+</li>
+<li>位置：电子科大南门对面的小巷子里面，手机地图上可以搜索到。</li>
+</ul>
+<h1 id="环境-environment"><a class="markdownIt-Anchor" href="#环境-environment"></a> 环境 Environment</h1>
+<ul>
+<li>评分： 9/10
+<ul>
+<li>布置有点小仙女气息，装横偏日系，大部分都是大桌，可以做四人，适合情侣或者兄弟几个出去简单恰一顿</li>
+</ul>
+</li>
+</ul>
+<h1 id="价格-prices"><a class="markdownIt-Anchor" href="#价格-prices"></a> 价格 Prices</h1>
+<ul>
+<li>
+<p>评分： 8/10</p>
+<ul>
+<li>价格和对应的菜品薄纱食堂了，比商业街略好。</li>
+</ul>
+</li>
+<li>
+<p>欸啊又忘记拍价格了，分为单拼双拼三拼，价格分别为15,16,17，还有高一个level的牛肉单独拼。里面的可以拼的菜还是挺多的，像是广式腊肠、叉烧、钳鱼（我觉得是鲶鱼😒）等。</p>
+</li>
+</ul>
+<h1 id="菜品体验"><a class="markdownIt-Anchor" href="#菜品体验"></a> 菜品体验</h1>
+<ul>
+<li>评分： 7/10
+<ul>
+<li>不是特别正宗的粤式煲仔饭，但是这个价格在这里能吃到就已经很不错了。</li>
+</ul>
+</li>
+</ul>
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/L3OtXew.png">
+    src="https://i.imgur.com/m52ofJC.jpg">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">证书安装完成且重载nginx
+    padding: 2px;">叉烧 拼 钳鱼 -￥16
     </div>
 </center>
-<hr />
-<h1 id="站点伪装"><a class="markdownIt-Anchor" href="#站点伪装"></a> 站点伪装</h1>
-<h3 id="配置x-ui面板"><a class="markdownIt-Anchor" href="#配置x-ui面板"></a> 配置x-ui面板</h3>
-<p>输入自己的VPS IP 后面加上自己的x-ui端口 如 <code>test.yourdomain.com:xxxx</code></p>
-<p>进去后首先更改自己的xray内核，替换到第二新的版本，然后添加一个节点</p>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/IT8AWnY.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">ws路径那里直接复制自己的uuid进来就行
-    </div>
-</center>
-<p>然后回到面板设置，凭自己喜好更改 <strong>监听端口</strong> 和 <strong>面板根路径</strong>（这根路径是减低别人暴力扫描的威胁）但是一定要记住这几个值，后续需要用到。</p>
-<blockquote>
-<p>值得注意的是，有些版本的根路径好像不能识别 <code>-</code>，所以如果后面你配置好nginx后无法打开，考虑是否是这个问题。<br />
-可以配置好x-ui后先执行 <code>systemctl stop nginx</code> 把代理服务关闭，直接输入 <code>自己的VPSip:端口/路径</code> 试下能否打开，如果可以，那么进行到下一步，把nginx重新打开 <code>systemctl restart nginx</code></p>
-</blockquote>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/hgFeoH2.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">这里我的url路径后面就是无法打开，结尾还有个/没写
-    </div>
-</center>
-<p>完成后重启面板，使用新的端口+uuid登录。格式为<code>VPS对应IP:设定端口/你的路径</code><br />
-你会发现自己还是登录不上，这是因为你的nginx代理还没有配置好</p>
-<h3 id="寻找站点"><a class="markdownIt-Anchor" href="#寻找站点"></a> 寻找站点</h3>
-<p>谷歌搜索关键词：intext: 登录 Cloudreve （这是个人网盘网站的关键词）<br />
-找一个打开后不会重定向到登录界面的网页，记录它的地址。</p>
-<p>（我之前找了一个会重定向的，后面输入面板地址老是在你末尾添加参数如<code>/login.php/</code> 导致无法正常访问面板）</p>
-<h3 id="配置nginx"><a class="markdownIt-Anchor" href="#配置nginx"></a> 配置Nginx</h3>
-<p>使用SSH工具 直接打开nginx配置文件<br />
-这里我使用 <code>FinalShell</code> 打开 <code>/etc/nginx/nginx.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">user www-data;</span><br><span class="line">worker_processes auto;</span><br><span class="line">pid /run/nginx.pid;</span><br><span class="line">include /etc/nginx/modules-enabled/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    sendfile on;</span><br><span class="line">    tcp_nopush on;</span><br><span class="line">    tcp_nodelay on;</span><br><span class="line">    keepalive_timeout 65;</span><br><span class="line">    types_hash_max_size 2048;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/mime.types;</span><br><span class="line">    default_type application/octet-stream;</span><br><span class="line">    gzip on;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        </span><br><span class="line">        server_name vps.jiefengzhou.com;  <span class="comment">#你的域名</span></span><br><span class="line">        ssl_certificate       /etc/x-ui/server.crt;  <span class="comment">#证书位置</span></span><br><span class="line">        ssl_certificate_key   /etc/x-ui/server.key; <span class="comment">#私钥位置</span></span><br><span class="line">        </span><br><span class="line">        ssl_session_timeout 1d;</span><br><span class="line">        ssl_session_cache shared:MozSSL:10m;</span><br><span class="line">        ssl_session_tickets off;</span><br><span class="line">        ssl_protocols    TLSv1.2 TLSv1.3;</span><br><span class="line">        ssl_prefer_server_ciphers off;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass https://bgin.com/; <span class="comment">#伪装网址</span></span><br><span class="line">            proxy_redirect off;</span><br><span class="line">            proxy_ssl_server_name on;</span><br><span class="line">            sub_filter_once off;</span><br><span class="line">            sub_filter <span class="string">&quot;bgin.com&quot;</span> <span class="variable">$server_name</span>; <span class="comment"># 仅域名</span></span><br><span class="line">            proxy_set_header Host <span class="string">&quot;bgin.com&quot;</span>; <span class="comment"># 仅域名</span></span><br><span class="line">            proxy_set_header Referer <span class="variable">$http_referer</span>;</span><br><span class="line">            proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_set_header User-Agent <span class="variable">$http_user_agent</span>;</span><br><span class="line">            proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">            proxy_set_header X-Forwarded-Proto https;</span><br><span class="line">            proxy_set_header Accept-Encoding <span class="string">&quot;&quot;</span>;</span><br><span class="line">            proxy_set_header Accept-Language <span class="string">&quot;zh-CN&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        location /37e00ca3-3fba-4f5e-ae59-4a03b285a6ea &#123;   <span class="comment">#节点ws路径</span></span><br><span class="line">            proxy_redirect off;</span><br><span class="line">            proxy_pass http://127.0.0.1:10000; <span class="comment">#你的节点端口</span></span><br><span class="line">            proxy_http_version 1.1;</span><br><span class="line">            proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            proxy_set_header Connection <span class="string">&quot;upgrade&quot;</span>;</span><br><span class="line">            proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">            proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        location /xui &#123;   <span class="comment">#xui路径</span></span><br><span class="line">            proxy_redirect off;</span><br><span class="line">            proxy_pass http://127.0.0.1:52345;  <span class="comment">#xui监听端口</span></span><br><span class="line">            proxy_http_version 1.1;</span><br><span class="line">            proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        location /.well-known/ &#123;</span><br><span class="line">               root /var/www/html;</span><br><span class="line">            &#125;</span><br><span class="line">        location / &#123;</span><br><span class="line">                rewrite ^(.*)$ https://$host<span class="variable">$1</span> permanent;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>文件配置好后复制覆盖到源文件， <code>Ctrl + S</code> 保存退出， 可以看到文件已被上传。</p>
-<p>然后访问 <code>test.yourdomain.com</code> 发现已经变成了自己伪装的网站，而访问 <code>test.yourdomain.com/你的x-ui路径</code> 变成了面板入口，这时你的伪装就成功了。</p>
+<p>叉烧捏就是感觉有股冰箱味，可能不是店家自己做的。而且感觉腌制的不够入味，店家后面端上来时估计是淋有汁；味道上有点甜，不够粤式</p>
+<p>青菜捏我是不太认可，先是菜的选择上就不对，店家用的估计是青小白菜那一类，但是煲仔饭一般用上海青（娃娃菜）作为青菜，再次也是生菜。<br />
+而且青菜是直接烫熟，然后在饭刚好时放到上面，再浇上酱汁。</p>
+<p>Updated: 据畔友说原本是有上海青的，菜用完了才用其他青菜的。算是鼠鼠运气不好吧</p>
+<p>饭的话没有那个锅巴香味，店家估计是用色拉油之类的，没有菜籽油、花生油那种香味。<br />
+在烹饪过程中没有用油在碗边封边，或者用的比较少，导致碗侧壁上的锅巴比较少或者说基本没有。店家估计是饭准备好后在碗边浇了一圈的酱汁，可以在碗侧壁看到酱油的痕迹。</p>
+<p>不过捏，考虑到价格也就14-18，跟我老家价格一样，但是我老家的环境比这差，味道也差不多，要啥自行车捏，总之炫就完了捏😋</p>
+<p>ps：那个汤我个人感觉有点咸，而且换成紫菜蛋花汤会更符合🐀🐀的记忆捏</p>
+<h1 id="总评-comment"><a class="markdownIt-Anchor" href="#总评-comment"></a> 总评 Comment</h1>
+<ul>
+<li>评分： 8/10
+<ul>
+<li>可以作为出去简单吃个饭的选择，价格和环境还是比较ok的</li>
+</ul>
+</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
       <tags>
-        <tag>OVZ VPS X-ui 梯子</tag>
+        <tag>美食</tag>
+        <tag>探店</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>南门探店-潮汕牛杂</title>
+    <url>/1/</url>
+    <content><![CDATA[<h1 id="位置-location"><a class="markdownIt-Anchor" href="#位置-location"></a> 位置 Location</h1>
+<ul>
+<li>评分：8/10
+<ul>
+<li>出门就到，从宿舍出门扫单车骑1.7公里大概8分钟再出门走路2分钟可以到达。</li>
+</ul>
+</li>
+<li>位置：电子科大南门对面的小巷子里面，小煲贝旁边，手机地图上可以搜索到。</li>
+</ul>
+<h1 id="环境-environment"><a class="markdownIt-Anchor" href="#环境-environment"></a> 环境 Environment</h1>
+<ul>
+<li>评分： 8/10
+<ul>
+<li>在该价位上算是中规中矩了，一是没有给你摆到路边摊里临时支起的小帐篷里，二是给了你单人位，社恐人士好评，但也是缺点，不是特别适合三四个人一起聚。</li>
+</ul>
+</li>
+</ul>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/indLNQT.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">环境样张|随便拍拍，没有拍到全貌是我的错T>T
+    </div>
+</center>
+<h1 id="价格-prices"><a class="markdownIt-Anchor" href="#价格-prices"></a> 价格 Prices</h1>
+<ul>
+<li>
+<p>评分： 6/10</p>
+<ul>
+<li>标准的商业街水平，相比于食堂价格来说是具有性价比，但是跟商业街来说差不多的水平。</li>
+</ul>
+</li>
+<li>
+<p>嘤嘤忘记给拍个价格了，凭我的记忆来说就是有粉面和捞饭这几个选择，有牛杂、牛腩、牛肚？，配菜有白萝卜和豆腐，根据选择对应有不同的价位，价格在13-22之间吧。<br />
+我选的是萝卜豆腐牛杂捞饭，-￥17</p>
+</li>
+</ul>
+<h1 id="菜品体验"><a class="markdownIt-Anchor" href="#菜品体验"></a> 菜品体验</h1>
+<ul>
+<li>评分： 4/10
+<ul>
+<li>从我一个两广人的口味来说，食材不够新鲜，部分过于入味，部分没有入味。汤也不太行。</li>
+</ul>
+</li>
+</ul>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/dPimT37.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">萝卜豆腐牛杂捞饭
+    </div>
+</center>
+<ul>
+<li>
+<p>上菜速度，比隔壁的小煲贝快了差不多两倍（也可能是这边人也比隔壁少了一个量级🤣，同时这种标准的快餐制作方式速度很快）大概5分钟就可以上菜。</p>
+</li>
+<li>
+<p>首先第一个差评就是菜上面满满的香菜和小葱。对于汤来说这是大忌，香菜和葱的香味直接掩盖了汤和肉的味道，一方面就是不容易品尝到菜品原本的味道，二就是有可能掩盖住食材的问题（不新鲜之类的）。虽然我第一时间把香料捞出，但是尝了一口汤，还是残留了部分的香菜的味道</p>
+</li>
+<li>
+<p>香菜和小葱一般是放在：调料汁（包括做葱油）。粉面上面。前者是取它们的香味，作为调味的基调（大概是这个意思？反正就是放进去后香菜和小葱的味道就是很明显）；后者一是可以起到点缀（绿绿的青菜谁不喜欢😋），二是可以作为小菜（粉面上的香菜和葱一般就当作青菜吃了）</p>
+</li>
+<li>
+<p>然后第二个差评就是豆腐和白萝卜炖得不够入味。可以吃出来，白萝卜和豆腐都是同一时间放进去的，而且时间比较短，萝卜和豆腐都不够入味，即使汤比较咸，但是吃进去就是白萝卜和豆腐的味道，汤水完全没有浸进去；其次就是炖白萝卜和豆腐的时候火候不够大，导致他们不够软烂。（我老家那边的街头牛杂老板说里面的白萝卜、牛筋是先用高压锅炖到软烂再放到牛骨汤里煮的）</p>
+</li>
+<li>
+<p>第三个差评就是牛杂调味过于重口。第一入口就是咸，完全被调味酱汁所覆盖，咀嚼后就是牛杂特有的咀嚼口感，末了才能勉强吃到牛肉的原本肉味😤。短评就是牛杂调味过头了，要么是商家针对川渝口味做出的调整，要么就是想用重调味掩盖食材原本的味道。</p>
+</li>
+<li>
+<p>汤依旧是那么的咸（来到成都后只要是喝到汤，都觉得有点咸😥），因为有香菜味道的残留，汤就不是那么好评价了，不予置评。</p>
+</li>
+</ul>
+<h1 id="总评-comment"><a class="markdownIt-Anchor" href="#总评-comment"></a> 总评 Comment</h1>
+<ul>
+<li>评分： 5/10
+<ul>
+<li>这种店，我只推荐是想尝试新口味的来，而且只来一次。</li>
+<li>作为尝试，这家店是合格的，但是你若要想长期在他家干饭，我就要摇摇头了🫡</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>美食</tag>
+        <tag>探店</tag>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Debian 删除apache2</title>
+    <url>/20915/</url>
+    <content><![CDATA[<p>首先停止apache2 服务</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">service apache2 stop<br></code></pre></td></tr></table></figure>
+<p>使用命令查看到服务已经停止。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">systemctl status apache2<br></code></pre></td></tr></table></figure>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/Iu3vS6E.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">停止运行apache
+    </div>
+</center>
+<p>依次输入如下命令删除apache2对应的文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">apt --purge remove apache2 -y<br>apt --purge remove apache2-doc -y<br>apt --purge remove apache2-data -y<br>apt --purge remove apache2-bin -y<br>apt --purge remove apache2-utils -y<br></code></pre></td></tr></table></figure>
+<p>检查是否有残留文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">dpkg -l | grep apache2<br></code></pre></td></tr></table></figure>
+<p>当显示没有文件存在时(显示空白，没有任何输出)表明卸载完成。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Debian</tag>
+        <tag>Linus</tag>
+        <tag>apache</tag>
+        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -243,7 +352,7 @@ BBR加速配置： [[OpenVZ 机型vps 开启BBR加速]]<br />
 <p>选择其中一个放到你的hosts文件中即可。</p>
 <h1 id="修改vps的hosts文件"><a class="markdownIt-Anchor" href="#修改vps的hosts文件"></a> 修改VPS的hosts文件</h1>
 <p>使用SSH工具连接上vps后，键入指令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">vim /etc/hosts<br></code></pre></td></tr></table></figure>
 <p>非管理员用户可能提示权限不足，前面还需要加上 <code>sudo</code> 提权</p>
 <p>进入后就是 vim 的一般模式， 键入 <code>i</code> 进入插入模式，使用方向键移动光标到底部， 然后输入自己对应网站的ip地址，后面连续键入两个制表符<code>TAB</code> 缩进， 键入对应的网站</p>
 <center>
@@ -260,7 +369,7 @@ BBR加速配置： [[OpenVZ 机型vps 开启BBR加速]]<br />
 <p>完成编辑后 按 <code>ESC</code> 回到一般模式， 最后键入 <code>:wq</code> 保存并退出</p>
 <h1 id="刷新dns缓存"><a class="markdownIt-Anchor" href="#刷新dns缓存"></a> 刷新DNS缓存</h1>
 <p>相关指令网上有很多，我使用的是Debian10 系统，所以输入如下指令即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/init.d/networking restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">/etc/init.d/networking restart<br></code></pre></td></tr></table></figure>
 <p>同理，无权限请在开头加上 <code>sudo</code> 提权</p>
 <center>
     <img style="border-radius: 0.3125em;
@@ -275,9 +384,15 @@ BBR加速配置： [[OpenVZ 机型vps 开启BBR加速]]<br />
 </center>
 <hr />
 <p>一键写入命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;185.199.108.133 \t\t raw.githubusercontent.com&quot;</span> &gt;&gt; /etc/hosts</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;128.1.164.230 \t\t www.aapanel.com&quot;</span> &gt;&gt; /etc/hosts</span><br><span class="line">/etc/init.d/networking restart </span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;185.199.108.133 \t\t raw.githubusercontent.com&quot;</span> &gt;&gt; /etc/hosts<br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;128.1.164.230 \t\t www.aapanel.com&quot;</span> &gt;&gt; /etc/hosts<br>/etc/init.d/networking restart<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
       <tags>
-        <tag>Linus DNS VPS hosts</tag>
+        <tag>Linus</tag>
+        <tag>DNS</tag>
+        <tag>VPS</tag>
+        <tag>hosts</tag>
       </tags>
   </entry>
   <entry>
@@ -363,29 +478,315 @@ BBR加速配置： [[OpenVZ 机型vps 开启BBR加速]]<br />
     </div>
 </center>
 ]]></content>
+      <categories>
+        <category>Software</category>
+      </categories>
       <tags>
-        <tag>WSA 安装教程</tag>
+        <tag>WSA</tag>
+        <tag>安装教程</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h1 id="为什么想做一个网站"><a class="markdownIt-Anchor" href="#为什么想做一个网站"></a> 为什么想做一个网站</h1>
-<p>本来想注册个自己的域名的，结果发现自己名字.com的域名被购买了，还被重定向到黄网了，一怒之下花了10刀买了个类似的域名占坑，一方面丢自己的博客，另一方面给自己的梯子套CDN，还有打算做一个自己的CV备用。</p>
+    <title>OVZ机型 x-ui +nginx 实现单端口多用户代理</title>
+    <url>/8767/</url>
+    <content><![CDATA[<h1 id="系统初始化"><a class="markdownIt-Anchor" href="#系统初始化"></a> 系统初始化</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 更新软件源</span><br>apt update -y<br>apt install -y curl socat<br><br><span class="hljs-comment"># 添加shots NDS解析记录（防止ipv6解析失败403)</span><br><span class="hljs-comment"># 这一步暂时跳过，如果后面使用wget命令</span><br><span class="hljs-comment"># 运行别人的脚本时发现一直在连接</span><br><span class="hljs-comment"># 且连接的域名ip为ipv6</span><br><span class="hljs-comment"># 可以添加对应的ipv4地址到hosts</span><br><span class="hljs-comment"># 最后刷新DNS缓存</span><br>vim /etc/hosts<br><br><span class="hljs-comment"># OVZ配置BBR</span><br>wget --no-cache -O lkl-haproxy.sh https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy.sh &amp;&amp; bash lkl-haproxy.sh<br><br><span class="hljs-comment"># 安装 x-ui</span><br>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)<br><br><span class="hljs-comment"># 卸载apache2（部分debian机型重装自带）</span><br><span class="hljs-comment"># 最后一条命令是检查有没有残留，如果有继续使用命令删除</span><br>service apache2 stop<br>apt --purge remove apache2 -y<br>apt --purge remove apache2-doc -y<br>apt --purge remove apache2-data -y<br>apt --purge remove apache2-bin -y<br>apt --purge remove apache2-utils -y<br>dpkg -l | grep apache2<br><br><span class="hljs-comment"># 安装nginx</span><br>apt install nginx<br><br><span class="hljs-comment">#安装acme：</span><br>curl https://get.acme.sh | sh<br><br><span class="hljs-comment">#添加软链接：</span><br><span class="hljs-built_in">ln</span> -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh<br><br><span class="hljs-comment">#切换CA机构：</span><br>acme.sh --set-default-ca --server letsencrypt<br><br><span class="hljs-comment">#申请证书：</span><br><span class="hljs-comment"># 域名可以是二级域名</span><br>acme.sh --issue -d vps.jiefengzhou.com -k ec-256 --webroot /var/www/html<br><br><span class="hljs-comment">#安装证书&amp;重载nginx:</span><br>acme.sh --install-cert -d vps.jiefengzhou.com --ecc --key-file /etc/x-ui/server.key --fullchain-file /etc/x-ui/server.crt --reloadcmd <span class="hljs-string">&quot;systemctl force-reload nginx&quot;</span><br><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>host更改教程：[[<a href="http://xn--VPSraw-kb9lk1m8utuu6f.githubusercontent.com">VPS无法连接raw.githubusercontent.com</a> 解决方法]]<br />
+BBR加速配置： [[OpenVZ 机型vps 开启BBR加速]]<br />
+删除apache2： [[Debian 删除apache2]]</p>
+</blockquote>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/L3OtXew.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">证书安装完成且重载nginx
+    </div>
+</center>
+<hr />
+<h1 id="站点伪装"><a class="markdownIt-Anchor" href="#站点伪装"></a> 站点伪装</h1>
+<h3 id="配置x-ui面板"><a class="markdownIt-Anchor" href="#配置x-ui面板"></a> 配置x-ui面板</h3>
+<p>输入自己的VPS IP 后面加上自己的x-ui端口 如 <code>test.yourdomain.com:xxxx</code></p>
+<p>进去后首先更改自己的xray内核，替换到第二新的版本，然后添加一个节点</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/IT8AWnY.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">ws路径那里直接复制自己的uuid进来就行
+    </div>
+</center>
+<p>然后回到面板设置，凭自己喜好更改 <strong>监听端口</strong> 和 <strong>面板根路径</strong>（这根路径是减低别人暴力扫描的威胁）但是一定要记住这几个值，后续需要用到。</p>
+<blockquote>
+<p>值得注意的是，有些版本的根路径好像不能识别 <code>-</code>，所以如果后面你配置好nginx后无法打开，考虑是否是这个问题。<br />
+可以配置好x-ui后先执行 <code>systemctl stop nginx</code> 把代理服务关闭，直接输入 <code>自己的VPSip:端口/路径</code> 试下能否打开，如果可以，那么进行到下一步，把nginx重新打开 <code>systemctl restart nginx</code></p>
+</blockquote>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/hgFeoH2.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">这里我的url路径后面就是无法打开，结尾还有个/没写
+    </div>
+</center>
+<p>完成后重启面板，使用新的端口+uuid登录。格式为<code>VPS对应IP:设定端口/你的路径</code><br />
+你会发现自己还是登录不上，这是因为你的nginx代理还没有配置好</p>
+<h3 id="寻找站点"><a class="markdownIt-Anchor" href="#寻找站点"></a> 寻找站点</h3>
+<p>谷歌搜索关键词：intext: 登录 Cloudreve （这是个人网盘网站的关键词）<br />
+找一个打开后不会重定向到登录界面的网页，记录它的地址。</p>
+<p>（我之前找了一个会重定向的，后面输入面板地址老是在你末尾添加参数如<code>/login.php/</code> 导致无法正常访问面板）</p>
+<h3 id="配置nginx"><a class="markdownIt-Anchor" href="#配置nginx"></a> 配置Nginx</h3>
+<p>使用SSH工具 直接打开nginx配置文件<br />
+这里我使用 <code>FinalShell</code> 打开 <code>/etc/nginx/nginx.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">user www-data;<br>worker_processes auto;<br>pid /run/nginx.pid;<br>include /etc/nginx/modules-enabled/*.conf;<br><br>events &#123;<br>    worker_connections 1024;<br>&#125;<br><br>http &#123;<br>    sendfile on;<br>    tcp_nopush on;<br>    tcp_nodelay on;<br>    keepalive_timeout 65;<br>    types_hash_max_size 2048;<br><br>    include /etc/nginx/mime.types;<br>    default_type application/octet-stream;<br>    gzip on;<br><br>    server &#123;<br>        listen 443 ssl;<br><br>        server_name vps.jiefengzhou.com;  <span class="hljs-comment">#你的域名</span><br>        ssl_certificate       /etc/x-ui/server.crt;  <span class="hljs-comment">#证书位置</span><br>        ssl_certificate_key   /etc/x-ui/server.key; <span class="hljs-comment">#私钥位置</span><br><br>        ssl_session_timeout 1d;<br>        ssl_session_cache shared:MozSSL:10m;<br>        ssl_session_tickets off;<br>        ssl_protocols    TLSv1.2 TLSv1.3;<br>        ssl_prefer_server_ciphers off;<br><br>        location / &#123;<br>            proxy_pass https://bgin.com/; <span class="hljs-comment">#伪装网址</span><br>            proxy_redirect off;<br>            proxy_ssl_server_name on;<br>            sub_filter_once off;<br>            sub_filter <span class="hljs-string">&quot;bgin.com&quot;</span> <span class="hljs-variable">$server_name</span>; <span class="hljs-comment"># 仅域名</span><br>            proxy_set_header Host <span class="hljs-string">&quot;bgin.com&quot;</span>; <span class="hljs-comment"># 仅域名</span><br>            proxy_set_header Referer <span class="hljs-variable">$http_referer</span>;<br>            proxy_set_header X-Real-IP <span class="hljs-variable">$remote_addr</span>;<br>            proxy_set_header User-Agent <span class="hljs-variable">$http_user_agent</span>;<br>            proxy_set_header X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;<br>            proxy_set_header X-Forwarded-Proto https;<br>            proxy_set_header Accept-Encoding <span class="hljs-string">&quot;&quot;</span>;<br>            proxy_set_header Accept-Language <span class="hljs-string">&quot;zh-CN&quot;</span>;<br>        &#125;<br><br><br>        location /37e00ca3-3fba-4f5e-ae59-4a03b285a6ea &#123;   <span class="hljs-comment">#节点ws路径</span><br>            proxy_redirect off;<br>            proxy_pass http://127.0.0.1:10000; <span class="hljs-comment">#你的节点端口</span><br>            proxy_http_version 1.1;<br>            proxy_set_header Upgrade <span class="hljs-variable">$http_upgrade</span>;<br>            proxy_set_header Connection <span class="hljs-string">&quot;upgrade&quot;</span>;<br>            proxy_set_header Host <span class="hljs-variable">$host</span>;<br>            proxy_set_header X-Real-IP <span class="hljs-variable">$remote_addr</span>;<br>            proxy_set_header X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;<br>        &#125;<br><br>        location /xui &#123;   <span class="hljs-comment">#xui路径</span><br>            proxy_redirect off;<br>            proxy_pass http://127.0.0.1:52345;  <span class="hljs-comment">#xui监听端口</span><br>            proxy_http_version 1.1;<br>            proxy_set_header Host <span class="hljs-variable">$host</span>;<br>        &#125;<br>    &#125;<br><br>    server &#123;<br>        listen 80;<br>        location /.well-known/ &#123;<br>               root /var/www/html;<br>            &#125;<br>        location / &#123;<br>                rewrite ^(.*)$ https://$host<span class="hljs-variable">$1</span> permanent;<br>            &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>文件配置好后复制覆盖到源文件， <code>Ctrl + S</code> 保存退出， 可以看到文件已被上传。</p>
+<p>然后访问 <code>test.yourdomain.com</code> 发现已经变成了自己伪装的网站，而访问 <code>test.yourdomain.com/你的x-ui路径</code> 变成了面板入口，这时你的伪装就成功了。</p>
+<blockquote>
+<p>这里是建议学习下nginx的location参数设置，可以更好个性化你的伪装站点，比如 <code>location /xui &#123;</code> 这段是最后匹配的，也就是只要地址以/xui结尾，那么就能访问。而修改成 <code>location = /xui &#123;</code> 表示只有域名后面跟着/xui 才能访问，不能多也不能少。</p>
+</blockquote>
+<h3 id="导入节点测试"><a class="markdownIt-Anchor" href="#导入节点测试"></a> 导入节点测试</h3>
+<p>重新打开 x-ui 面板，把节点导入到自己的v2ray内核代理软件中，这里要把服务器改成你的域名，端口改成 <code>443</code> ，然后检查下 <code>ws</code> 路径和TLS是否开启且服务器 <code>SNI</code> 为你的域名。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/Dy1X4Qp.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">具体配置如下，其中请求头可写可不写，TLS记得打开
+    </div>
+</center>
+<p>检查无误后可以使用节点测试了</p>
+<hr />
+<h1 id="多用户代理"><a class="markdownIt-Anchor" href="#多用户代理"></a> 多用户代理</h1>
+<p>这里实现的思路使用443以外的端口，这里使用的是 <code>10000+</code> 的备用端口，然后使用Nginx 反代，使用端口443转发，这样看起来就是共用一个 <code>443</code> 端口了</p>
+<p>我们只需要在 nginx 的配置文件中添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs conf">location /ary &#123;   #节点ws路径<br>    proxy_redirect off;<br>    proxy_pass http://127.0.0.1:10000; #你的节点端口<br>    proxy_http_version 1.1;<br>    proxy_set_header Upgrade $http_upgrade;<br>    proxy_set_header Connection &quot;upgrade&quot;;<br>    proxy_set_header Host $host;<br>    proxy_set_header X-Real-IP $remote_addr;<br>    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>完成后保存退出，reload nginx服务即可。</p>
 ]]></content>
+      <categories>
+        <category>VPS</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+        <tag>VPS</tag>
+        <tag>OVZ</tag>
+        <tag>X-ui</tag>
+        <tag>梯子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenVZ 机型 vps 开启 BBR 加速</title>
+    <url>/21004/</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>BBR 是由 Google 开发的一款开源的阻塞控制算法，主要是用来给服务器加速的。打个比方，比如你有一台搬瓦工的 VPS，你在上面架设了个网站，正常情况下你在国内下载你 VPS 上面的文件，可能平均速度只有 100kb/s，但是如果你安装并开启了 BBR，可能这个下载速度会提升到 1M/s，这就是 BBR 的作用。当然，BBR 的作用还不止这些，总之，BBR 就是使用 tcp 暴力发包的原理进行实现提速。</p>
+<p>OpenVZ 架构的 VPS，好处是便宜，丢了不心疼。坏处是内核不独立，各种受限。BBR 出世之时本是不支持 OpenVZ 的，后来有魔改版问世才有了支持，但一般来说仍有前置条件：必须有  <code>TUN/TAP</code>  功能。此功能在一些服务商的 VPS 是没有的，也有一些提供但默认是关闭的，需要在面板中手动开启。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h1 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h1>
+<h3 id="ikl-haproxy"><a class="markdownIt-Anchor" href="#ikl-haproxy"></a> ikl- Haproxy<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h3>
+<h4 id="作者仓库"><a class="markdownIt-Anchor" href="#作者仓库"></a> 作者仓库</h4>
+<p><a href="https://github.com/mzz2017/lkl-haproxy">https://github.com/mzz2017/lkl-haproxy</a></p>
+<blockquote>
+<p>需要开启 <code>TUN/TAP</code> 和至少 <code>256M</code> 空余内存<br />
+Debian/Ubuntu/CentOS</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">wget --no-cache -O lkl-haproxy.sh https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy.sh &amp;&amp; bash lkl-haproxy.sh<br></code></pre></td></tr></table></figure>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/2WomFZQ.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">按命令行提示完成操作即可
+    </div>
+</center>
+<hr />
+<h3 id="94ishme"><a class="markdownIt-Anchor" href="#94ishme"></a> <a href="http://94ish.me">94ish.me</a> 五合一脚本</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">wget -N --no-check-certificate <span class="hljs-string">&quot;https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh&quot;</span> &amp;&amp; <span class="hljs-built_in">chmod</span> +x tcp.sh &amp;&amp; ./tcp.sh<br></code></pre></td></tr></table></figure>
+<h3 id="rinetd"><a class="markdownIt-Anchor" href="#rinetd"></a> Rinetd</h3>
+<blockquote>
+<p><code>64bit</code>系统、不需要开启<code>TUN/TAP</code>、<code>256M</code> 以上内存</p>
+</blockquote>
+<h4 id="debian-ubuntu"><a class="markdownIt-Anchor" href="#debian-ubuntu"></a> Debian | Ubuntu</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#适用于单网卡（单IP）服务器：</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-debianorubuntu.sh<br>bash tcp_nanqinlang-rinetd-debianorubuntu.sh<br><span class="hljs-comment">#如果提示only support OpenVZ !，则使用下面这个脚本</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0-nocheckvirt/tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt.sh<br>bash tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt.sh<br><br><span class="hljs-comment">#适用于多网卡（多IP）服务器，会为所有网卡（所有IP）提供加速：</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-debianorubuntu-multiNIC.sh<br>bash tcp_nanqinlang-rinetd-debianorubuntu-multiNIC.sh<br><span class="hljs-comment">#如果提示only support OpenVZ !，则使用下面这个脚本</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0-nocheckvirt/tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt-multiNIC.sh<br>bash tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt-multiNIC.sh<br></code></pre></td></tr></table></figure>
+<h4 id="centos-7"><a class="markdownIt-Anchor" href="#centos-7"></a> CentOS 7</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#和上面一样，也分单网卡和多网卡版本</span><br><span class="hljs-comment">#单网卡</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-centos.sh<br>bash tcp_nanqinlang-rinetd-centos.sh<br><span class="hljs-comment">#如果提示only support OpenVZ !，则使用下面这个脚本</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0-nocheckvirt/tcp_nanqinlang-rinetd-centos-nocheckvirt.sh<br>bash tcp_nanqinlang-rinetd-centos-nocheckvirt.sh<br><br><span class="hljs-comment">#多网卡</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-centos.sh<br>bash tcp_nanqinlang-rinetd-centos.sh<br><span class="hljs-comment">#如果提示only support OpenVZ !，则使用下面这个脚本</span><br>wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0-nocheckvirt/tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt-multiNIC.sh<br>bash tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt-multiNIC.sh<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="ikl-by-linhua55"><a class="markdownIt-Anchor" href="#ikl-by-linhua55"></a> ikl by linhua55</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">apt update<br>apt install curl<br>curl https://raw.githubusercontent.com/linhua55/lkl_study/master/get-rinetd.sh | bash<br><br><span class="hljs-comment"># 后续可以使用如下命令按需修改端口</span><br>vi /etc/rinetd-bbr.conf<br><br><span class="hljs-comment"># 修改完成后重启服务</span><br>service rinetd-bbr restart<br></code></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h1>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://Sobaigu.com">Sobaigu.com</a>. (2021). <em>OpenVZ 架构一键开启 BBR 加速的方法 | 搜百谷</em>. [online] Available at: <a href="https://sobaigu.com/linux-bbr-openvz.html">https://sobaigu.com/linux-bbr-openvz.html</a> [Accessed 28 Jan. 2023]. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://Blueskyxn.com">Blueskyxn.com</a>. (2021). <em>OVZ / NAT BBR 安装方案 【支持 OpenVZ】</em>. [online] Available at: <a href="https://www.blueskyxn.com/202102/3952.html">https://www.blueskyxn.com/202102/3952.html</a> [Accessed 28 Jan. 2023]. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>VPS</category>
+      </categories>
+      <tags>
+        <tag>openvz</tag>
+        <tag>BBR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始使用便宜VPS搭建自己的梯子，开启CDN后可以油管4k</title>
+    <url>/6941/</url>
+    <content><![CDATA[<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h1>
+<h3 id="vps-准备"><a class="markdownIt-Anchor" href="#vps-准备"></a> VPS 准备</h3>
+<h4 id="购买vps"><a class="markdownIt-Anchor" href="#购买vps"></a> 购买VPS</h4>
+<p>这里我本着便宜的原则，直接使用了 <strong>hosteons</strong> 的vps，年付 <code>18$</code> ，购买了一个配置为 <em>一核CPU, 512MB, 10GB SSD, 默认分配一个IPv4 和一个 IPv6</em> 的<code>OVZ</code> 机型，目前网站上还有最低年付 <code>16$</code> 的OVZ机型， 且支持支付宝支付。目前有洛杉矶和纽约的机房</p>
+<p>目前<code>IPv4</code> 比较稀缺，所以也有主机商售卖 <strong>IPv6 only</strong> 的vps。虽然说 IPv6 也可以搭建梯子，但是实际搭建需要的很多下载资源以及你的网络情况决定了使用 <code>IPv4</code> 会有更好的效果，所以建议购买有 <code>IPv4</code> 的VPS</p>
+<p>如果觉得我的教程还不错的话可以使用下我的<a href="https://my.hosteons.com/aff.php?aff=1811">推广链接</a></p>
+<p>OVZ 机型的特点就是便宜，但几乎每个主机商都存在OVZ超售的情况，所以实际得到的性能可能没有那么高。且无法升级内核，也就是无法开启BBR加速（BBR加速原理就是暴力TCP发包，显著提高垃圾VPS的节点速度），但是可以通过大佬们的魔改BBR内核来实现开启BBR。</p>
+<p>购买完成后等待服务器分配VPS， 我当时购买时等了十几分钟吧。完成后我选择了一个 <code>Debian10</code> 的系统，然后到设置里面选择开启 <code>TUN/TAP</code> （为了后面使用BBR加速）</p>
+<p>这里记得记录下你的Root 密码以及 主机的 ip 地址，后面我们使用 SSH工具连接需要该记录</p>
+<p>此时打开你的命令行终端，输入 <code>ping 你的主机ip</code> 即可查看自己区域到主机的网络是否被墙，如果丢包严重或者ping 不通，可以去主机售后那发工单申请更换主机IP，我第一次给分配了一个乌克兰的IP，直接ping不了，发工单后客服给我换了个IP，ping 通过了。</p>
+<h3 id="域名准备"><a class="markdownIt-Anchor" href="#域名准备"></a> 域名准备</h3>
+<h4 id="购买域名"><a class="markdownIt-Anchor" href="#购买域名"></a> 购买域名</h4>
+<p>同样是便宜的原则，我选用了 <a href="https://www.dynadot.com/">dynadot</a> 这个域名商的服务，同样支持支付宝支付。同样便宜的选择还有 <a href="https://www.namesilo.com/">namesilo</a> 这里选择一个便宜的，方便自己的域名即可。</p>
+<h4 id="迁移域名到cloudflare解析"><a class="markdownIt-Anchor" href="#迁移域名到cloudflare解析"></a> 迁移域名到cloudflare解析</h4>
+<p>下单完成后来到自己域名的管理界面，到 <strong>DNS解析</strong> 这个选项里有个 <code>name servers</code> 的选项，如果这里已经存在记录，则把他们全部删除，然后填入我们后面在cloudflare 的记录，这里保持窗口即可</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/fKgazOm.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">这里的栏填入我们cloud flare 的指定服务器记录
+    </div>
+</center>
+<p>我们到cloud flare那里注册个账户，然后根据提示把域名迁移到cloud flare里去，方便我们后面使用cloud flare 的CDN加速</p>
+<p>创建后在主页点击添加站点，然后根据提示完成操作即可。</p>
+<p>计划中选择 <strong>Free</strong> 即可，DNS记录中我们先跳过，如果提示直接点击确认即可。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/7sJgcoz.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">添加域名
+    </div>
+</center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/0Cnpzos.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">把这两项记录填到前面的栏里
+    </div>
+</center>
+<p>完成后稍等片刻（大概3-10分钟）cf就会发邮件过来通知域名解析迁移完成</p>
+<h4 id="设置二级域名解析"><a class="markdownIt-Anchor" href="#设置二级域名解析"></a> 设置二级域名解析</h4>
+<p>打开cloud flare 的DNS管理面板，把先前的所以解析都删除，然后给自己 的二级域名添加一个 <code>A</code>记录，图中我第一个记录便是用于搭建梯子走加密流量的二级域名；第二个记录是自己的根域名解析，在名称填入 <code>@</code> 即可；最后一个是 <strong>CNAME</strong> 记录，用于内容记录的别名，这里我用于设置我的 github page 转发了。</p>
+<p>后面的代理状态有个小云朵，开启便是启用cloud flare 的CDN加速，打开后再去 Ping 自己的二级域名就会发现不是自己的主机IP了。</p>
+<p>开启 CDN 后是加速还是减速看自己的VPS 质量，像我买的垃圾 VPS 使用后就是加速了，其他高级 VPS 如 搬瓦工的 GIA、CN2线路主机开启后可能就是减速了。</p>
+<p>建议是先保持关闭，后面如果需要再打开。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/aV1YNCq.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">添加域名解析记录
+    </div>
+</center>
+<h3 id="ssh-工具"><a class="markdownIt-Anchor" href="#ssh-工具"></a> SSH 工具</h3>
+<p>这里建议大伙自己搜索下对应平台的SSH连接工具，按自己喜好安装。<br />
+这里我使用的是 <code>FinalShell</code> 是闭源且是国人开发的，安全性不是特别能保证，但有自带的海外加速功能，我使用其他Windows平台上的工具上很难连接上我的主机，无奈之下出此下策了。</p>
+<p><a href="http://www.hostbuf.com/t/988.html">FinalShell下载地址</a></p>
+<p>安装后打开，添加新连接，填入主机对应的IP, 端口(默认是<code>22</code> 如果是特殊机型建议找商家确定)</p>
+<p>连接用户名填： root<br />
+密码填自己给vps装系统时的提交的root密码</p>
+<p>连接成功后首先建议先给自己创建一个普通用户，以后使用普通用户登录（新手使用Linux 用 root 用户操作很危险），同时建议修改SSH登录方式为 密钥登录，静止root 用户使用 SSH 连接主机。</p>
+<p>完成后直接依次输入下面对应指令完成操作即可</p>
+<hr />
+<h1 id="x-ui-面板部署"><a class="markdownIt-Anchor" href="#x-ui-面板部署"></a> X-ui 面板部署</h1>
+<p>直接输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 更新软件源 &amp; 安装 curl, socat</span><br>apt update -y<br>apt install -y curl socat<br><br><span class="hljs-comment"># 添加shots NDS解析记录（防止ipv6解析失败403)</span><br><span class="hljs-comment"># 这一步暂时跳过，如果后面使用wget命令</span><br><span class="hljs-comment"># 运行别人的脚本时发现一直在连接</span><br><span class="hljs-comment"># 且连接的域名ip为ipv6</span><br><span class="hljs-comment"># 可以添加对应的ipv4地址到hosts</span><br><span class="hljs-comment"># 最后刷新DNS缓存</span><br>vim /etc/hosts<br><br><span class="hljs-comment"># OVZ 开启BBR 加速</span><br><span class="hljs-comment"># 运行后添加端口 443 ，后面可以自己修改配置文件</span><br>curl https://raw.githubusercontent.com/linhua55/lkl_study/master/get-rinetd.sh | bash<br><span class="hljs-comment"># 后续可以使用如下命令按需修改端口</span><br>vi /etc/rinetd-bbr.conf<br><span class="hljs-comment"># 修改完成后重启服务</span><br>service rinetd-bbr restart<br><br><span class="hljs-comment"># 安装 x-ui</span><br><span class="hljs-comment"># 安装完成后注意记录下自己的端口、用户名和密码</span><br><span class="hljs-comment"># x-ui 默认端口为 54321, 建议申请一个10000-50000端口，以防占用一些约定俗成的端口</span><br>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)<br><br><br><span class="hljs-comment"># 申请SSL泛域名证书</span><br>x-ui<br><span class="hljs-comment"># 然后选择16</span><br><span class="hljs-comment"># 这里需要</span><br><span class="hljs-comment"># 你的cloud flare global api</span><br><span class="hljs-comment"># cloud flare 注册邮箱</span><br><span class="hljs-comment"># 你购买的域名（一级域名）</span><br><span class="hljs-comment"># 完成后在 /root/cert 在可以找到.cer（公钥）, .key（私钥）后缀的证书</span><br><br></code></pre></td></tr></table></figure>
+<p>完成后到浏览器输入 <code>你的主机ip:你的x-ui端口</code> 即可打开你的x-ui面板</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/KKdd6fD.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">x-ui面板设置
+    </div>
+</center>
+<blockquote>
+<p>(可选)：在设置里可以填入自己上面得到的公钥和私钥路径，以及自定一个 xui 根路径<br />
+完成后重启面板就只能通过自己的域名和对应路径访问了<br />
+<code>你的二级域名:x-ui端口/x-ui面板路径</code><br />
+后面如果开启CDN加速后该访问方法行不通，因为CDN转发后的IP不是你主机的IP了，只能通过输入主机IP的方法访问。（浏览器会提示该站点不安全）</p>
+</blockquote>
+<p>回到入站列表设置<br />
+新建一个 <strong>VLESS + WS +TLS</strong> 的节点，注意 WS 的路径填一个不冲突的<br />
+端口选择 <code>443</code> （约定俗成的https访问端口）</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/04LmvEz.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">新建节点设置
+    </div>
+</center>
+<p>完成后复制节点信息，或者手机扫描二维码添加到自己对应的v2ray内核软件即可。(Qv2ray、V2rayN、V2rayNG)</p>
+<p>PC端需要检查下端口是否是 <code>443</code> ，以及是否开启 <code>TLS</code> ，请求头检查</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/isDa8iA.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">节点设置
+    </div>
+</center>
+<p>完成后启动节点便可以开始冲浪了。</p>
+<hr />
+<h1 id="多用户单端口设置"><a class="markdownIt-Anchor" href="#多用户单端口设置"></a> 多用户单端口设置</h1>
+<p>因为https 默认走的端口是 443，我们为了降低 GFW 审查异常流量（比如大流量通过 非443 端口）的概率，我们自己建节点单节点就直接使用 443端口了</p>
+<p>如果有多用户合租的需求，我们又想让所有节点共用 443 端口，那么就需要在主机开启 nginx 的反代理服务了，将我们其他端口的流量使用 443端口转发，这样看起来就是 443接管了所有流量。</p>
+<p>具体教程在我的另外一篇教程里。</p>
+]]></content>
+      <categories>
+        <category>VPS</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+        <tag>梯子</tag>
+      </tags>
   </entry>
 </search>

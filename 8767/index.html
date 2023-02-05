@@ -7,30 +7,32 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="cmd一键部署WSA套件">
+<meta name="description" content="OVZ机型 x-ui +nginx 实现单端口多用户代理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows 11 安装WSA andorid 13 + play store + magisk">
-<meta property="og:url" content="https://me.jiefengzhou.com/24452/index.html">
+<meta property="og:title" content="OVZ机型 x-ui +nginx 实现单端口多用户代理">
+<meta property="og:url" content="https://me.jiefengzhou.com/8767/index.html">
 <meta property="og:site_name" content="希君生羽翼，一化北溟鱼">
-<meta property="og:description" content="cmd一键部署WSA套件">
+<meta property="og:description" content="OVZ机型 x-ui +nginx 实现单端口多用户代理">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.imgur.com/dcwqlGV.png">
-<meta property="og:image" content="https://i.imgur.com/9eocoYp.png">
-<meta property="og:image" content="https://i.imgur.com/IVIpjJM.png">
-<meta property="og:image" content="https://i.imgur.com/hAMpS9v.png">
-<meta property="og:image" content="https://i.imgur.com/cE1Og8j.png">
-<meta property="article:published_time" content="2023-01-27T03:03:41.000Z">
-<meta property="article:modified_time" content="2023-02-05T07:31:52.166Z">
+<meta property="og:image" content="https://i.imgur.com/L3OtXew.png">
+<meta property="og:image" content="https://i.imgur.com/IT8AWnY.png">
+<meta property="og:image" content="https://i.imgur.com/hgFeoH2.png">
+<meta property="og:image" content="https://i.imgur.com/Dy1X4Qp.png">
+<meta property="article:published_time" content="2023-01-29T08:02:45.000Z">
+<meta property="article:modified_time" content="2023-02-05T07:31:52.170Z">
 <meta property="article:author" content="周韵萱">
-<meta property="article:tag" content="WSA">
-<meta property="article:tag" content="安装教程">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="VPS">
+<meta property="article:tag" content="OVZ">
+<meta property="article:tag" content="X-ui">
+<meta property="article:tag" content="梯子">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/dcwqlGV.png">
+<meta name="twitter:image" content="https://i.imgur.com/L3OtXew.png">
 
     <meta name="keywords" content="Blog">
 
 
-<title >Windows 11 安装WSA andorid 13 + play store + magisk</title>
+<title >OVZ机型 x-ui +nginx 实现单端口多用户代理</title>
 
 <!-- Favicon -->
 
@@ -244,7 +246,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            Windows 11 安装WSA andorid 13 + play store + magisk
+                            OVZ机型 x-ui +nginx 实现单端口多用户代理
                         </h1>
 
                         
@@ -254,7 +256,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        24452
+                                        8767
                                     </span
                                 ></li>
                             </ul>
@@ -374,7 +376,7 @@
             </div>
             <div name="tabs-toc" class="trm-tabs-item active">
                 <div class="post-toc">
-    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#安装准备"  data-scroll-to="#安装准备"><span class="toc-number">1.</span> <span class="toc-text"> 安装准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#操作设备规格"  data-scroll-to="#操作设备规格"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 操作设备规格：</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#开启虚拟机设置"  data-scroll-to="#开启虚拟机设置"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 开启虚拟机设置</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#安装好adb"  data-scroll-to="#安装好adb"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 安装好adb</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#安装wsa"  data-scroll-to="#安装wsa"><span class="toc-number">2.</span> <span class="toc-text"> 安装WSA</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#系统初始化"  data-scroll-to="#系统初始化"><span class="toc-number">1.</span> <span class="toc-text"> 系统初始化</span></a></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#站点伪装"  data-scroll-to="#站点伪装"><span class="toc-number">2.</span> <span class="toc-text"> 站点伪装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#配置x-ui面板"  data-scroll-to="#配置x-ui面板"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 配置x-ui面板</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#寻找站点"  data-scroll-to="#寻找站点"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 寻找站点</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#配置nginx"  data-scroll-to="#配置nginx"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 配置Nginx</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#导入节点测试"  data-scroll-to="#导入节点测试"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 导入节点测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#多用户代理"  data-scroll-to="#多用户代理"><span class="toc-number">3.</span> <span class="toc-text"> 多用户代理</span></a></li></ol>
 </div>
             </div>
         </div>
@@ -392,13 +394,13 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            01/27
+            01/29
         </div>
     </div>
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            11:03
+            16:02
         </div>
     </div>
     <div class="col-sm-4">
@@ -410,85 +412,91 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="安装准备"><a class="markdownIt-Anchor" href="#安装准备"></a> 安装准备</h1>
-<h3 id="操作设备规格"><a class="markdownIt-Anchor" href="#操作设备规格"></a> 操作设备规格：</h3>
-<p>本人所使用的设备操作系统信息为：<br />
-版本	Windows 11 专业工作站版 Insider Preview<br />
-版本	22H2<br />
-安装日期	‎1/‎21/‎2023<br />
-操作系统版本	25281.1000<br />
-体验	Windows Feature Experience Pack 1000.25281.1000.0<br />
-区域：美国</p>
-<h3 id="开启虚拟机设置"><a class="markdownIt-Anchor" href="#开启虚拟机设置"></a> 开启虚拟机设置</h3>
-<p>使用 <code>win</code> 键打开搜素框， 键入 <strong>windows功能</strong> ，打开设置后 选中 <em>虚拟机平台</em> , 点按确定后将提示重启设备，保存后个人工作后即可进行重启</p>
-<h3 id="安装好adb"><a class="markdownIt-Anchor" href="#安装好adb"></a> 安装好adb</h3>
-<p>这一步是方便后续使用WSAtools GUI 安装 APK文件</p>
+    <h1 id="系统初始化"><a class="markdownIt-Anchor" href="#系统初始化"></a> 系统初始化</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 更新软件源</span><br>apt update -y<br>apt install -y curl socat<br><br><span class="hljs-comment"># 添加shots NDS解析记录（防止ipv6解析失败403)</span><br><span class="hljs-comment"># 这一步暂时跳过，如果后面使用wget命令</span><br><span class="hljs-comment"># 运行别人的脚本时发现一直在连接</span><br><span class="hljs-comment"># 且连接的域名ip为ipv6</span><br><span class="hljs-comment"># 可以添加对应的ipv4地址到hosts</span><br><span class="hljs-comment"># 最后刷新DNS缓存</span><br>vim /etc/hosts<br><br><span class="hljs-comment"># OVZ配置BBR</span><br>wget --no-cache -O lkl-haproxy.sh https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy.sh &amp;&amp; bash lkl-haproxy.sh<br><br><span class="hljs-comment"># 安装 x-ui</span><br>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)<br><br><span class="hljs-comment"># 卸载apache2（部分debian机型重装自带）</span><br><span class="hljs-comment"># 最后一条命令是检查有没有残留，如果有继续使用命令删除</span><br>service apache2 stop<br>apt --purge remove apache2 -y<br>apt --purge remove apache2-doc -y<br>apt --purge remove apache2-data -y<br>apt --purge remove apache2-bin -y<br>apt --purge remove apache2-utils -y<br>dpkg -l | grep apache2<br><br><span class="hljs-comment"># 安装nginx</span><br>apt install nginx<br><br><span class="hljs-comment">#安装acme：</span><br>curl https://get.acme.sh | sh<br><br><span class="hljs-comment">#添加软链接：</span><br><span class="hljs-built_in">ln</span> -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh<br><br><span class="hljs-comment">#切换CA机构：</span><br>acme.sh --set-default-ca --server letsencrypt<br><br><span class="hljs-comment">#申请证书：</span><br><span class="hljs-comment"># 域名可以是二级域名</span><br>acme.sh --issue -d vps.jiefengzhou.com -k ec-256 --webroot /var/www/html<br><br><span class="hljs-comment">#安装证书&amp;重载nginx:</span><br>acme.sh --install-cert -d vps.jiefengzhou.com --ecc --key-file /etc/x-ui/server.key --fullchain-file /etc/x-ui/server.crt --reloadcmd <span class="hljs-string">&quot;systemctl force-reload nginx&quot;</span><br><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>host更改教程：[[<a target="_blank" rel="noopener" href="http://xn--VPSraw-kb9lk1m8utuu6f.githubusercontent.com">VPS无法连接raw.githubusercontent.com</a> 解决方法]]<br />
+BBR加速配置： [[OpenVZ 机型vps 开启BBR加速]]<br />
+删除apache2： [[Debian 删除apache2]]</p>
+</blockquote>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://i.imgur.com/L3OtXew.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">证书安装完成且重载nginx
+    </div>
+</center>
 <hr />
-<h1 id="安装wsa"><a class="markdownIt-Anchor" href="#安装wsa"></a> 安装WSA</h1>
-<p>去<a target="_blank" rel="noopener" href="https://www.mediafire.com/file/obddq4979ucw2zn/WSA_2211.40000.10.0_x64_Release-Nightly-with-magisk-a468fd94(25205)-canary-MindTheGapps-13.0-RemovedAmazon.7z/file">网盘</a> 下载WSA andoroid13 预览版安装文件，下载后解压缩，重命名该文件夹为 <code>WSA</code> 方便后续使用命令行安装</p>
-<p>解压缩后打开文件夹，右键 <strong>Install.ps1</strong> 文件，选择使用power shell 运行</p>
+<h1 id="站点伪装"><a class="markdownIt-Anchor" href="#站点伪装"></a> 站点伪装</h1>
+<h3 id="配置x-ui面板"><a class="markdownIt-Anchor" href="#配置x-ui面板"></a> 配置x-ui面板</h3>
+<p>输入自己的VPS IP 后面加上自己的x-ui端口 如 <code>test.yourdomain.com:xxxx</code></p>
+<p>进去后首先更改自己的xray内核，替换到第二新的版本，然后添加一个节点</p>
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/dcwqlGV.png">
+    src="https://i.imgur.com/IT8AWnY.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">一键部署安装
+    padding: 2px;">ws路径那里直接复制自己的uuid进来就行
     </div>
 </center>
-<p>完成后即可看到play store magisk 自动安装上去</p>
-<p>回到商店搜索 <strong>WSATools</strong> 安装即可， 这个是我们后续安装APK文件的地方</p>
+<p>然后回到面板设置，凭自己喜好更改 <strong>监听端口</strong> 和 <strong>面板根路径</strong>（这根路径是减低别人暴力扫描的威胁）但是一定要记住这几个值，后续需要用到。</p>
+<blockquote>
+<p>值得注意的是，有些版本的根路径好像不能识别 <code>-</code>，所以如果后面你配置好nginx后无法打开，考虑是否是这个问题。<br />
+可以配置好x-ui后先执行 <code>systemctl stop nginx</code> 把代理服务关闭，直接输入 <code>自己的VPSip:端口/路径</code> 试下能否打开，如果可以，那么进行到下一步，把nginx重新打开 <code>systemctl restart nginx</code></p>
+</blockquote>
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/9eocoYp.png">
+    src="https://i.imgur.com/hgFeoH2.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">WSATools
+    padding: 2px;">这里我的url路径后面就是无法打开，结尾还有个/没写
     </div>
 </center>
-<p>完成打开系统搜索框，会有一个 <em>子系统设置</em> 的项目，打开。</p>
+<p>完成后重启面板，使用新的端口+uuid登录。格式为<code>VPS对应IP:设定端口/你的路径</code><br />
+你会发现自己还是登录不上，这是因为你的nginx代理还没有配置好</p>
+<h3 id="寻找站点"><a class="markdownIt-Anchor" href="#寻找站点"></a> 寻找站点</h3>
+<p>谷歌搜索关键词：intext: 登录 Cloudreve （这是个人网盘网站的关键词）<br />
+找一个打开后不会重定向到登录界面的网页，记录它的地址。</p>
+<p>（我之前找了一个会重定向的，后面输入面板地址老是在你末尾添加参数如<code>/login.php/</code> 导致无法正常访问面板）</p>
+<h3 id="配置nginx"><a class="markdownIt-Anchor" href="#配置nginx"></a> 配置Nginx</h3>
+<p>使用SSH工具 直接打开nginx配置文件<br />
+这里我使用 <code>FinalShell</code> 打开 <code>/etc/nginx/nginx.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs bash">user www-data;<br>worker_processes auto;<br>pid /run/nginx.pid;<br>include /etc/nginx/modules-enabled/*.conf;<br><br>events &#123;<br>    worker_connections 1024;<br>&#125;<br><br>http &#123;<br>    sendfile on;<br>    tcp_nopush on;<br>    tcp_nodelay on;<br>    keepalive_timeout 65;<br>    types_hash_max_size 2048;<br><br>    include /etc/nginx/mime.types;<br>    default_type application/octet-stream;<br>    gzip on;<br><br>    server &#123;<br>        listen 443 ssl;<br><br>        server_name vps.jiefengzhou.com;  <span class="hljs-comment">#你的域名</span><br>        ssl_certificate       /etc/x-ui/server.crt;  <span class="hljs-comment">#证书位置</span><br>        ssl_certificate_key   /etc/x-ui/server.key; <span class="hljs-comment">#私钥位置</span><br><br>        ssl_session_timeout 1d;<br>        ssl_session_cache shared:MozSSL:10m;<br>        ssl_session_tickets off;<br>        ssl_protocols    TLSv1.2 TLSv1.3;<br>        ssl_prefer_server_ciphers off;<br><br>        location / &#123;<br>            proxy_pass https://bgin.com/; <span class="hljs-comment">#伪装网址</span><br>            proxy_redirect off;<br>            proxy_ssl_server_name on;<br>            sub_filter_once off;<br>            sub_filter <span class="hljs-string">&quot;bgin.com&quot;</span> <span class="hljs-variable">$server_name</span>; <span class="hljs-comment"># 仅域名</span><br>            proxy_set_header Host <span class="hljs-string">&quot;bgin.com&quot;</span>; <span class="hljs-comment"># 仅域名</span><br>            proxy_set_header Referer <span class="hljs-variable">$http_referer</span>;<br>            proxy_set_header X-Real-IP <span class="hljs-variable">$remote_addr</span>;<br>            proxy_set_header User-Agent <span class="hljs-variable">$http_user_agent</span>;<br>            proxy_set_header X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;<br>            proxy_set_header X-Forwarded-Proto https;<br>            proxy_set_header Accept-Encoding <span class="hljs-string">&quot;&quot;</span>;<br>            proxy_set_header Accept-Language <span class="hljs-string">&quot;zh-CN&quot;</span>;<br>        &#125;<br><br><br>        location /37e00ca3-3fba-4f5e-ae59-4a03b285a6ea &#123;   <span class="hljs-comment">#节点ws路径</span><br>            proxy_redirect off;<br>            proxy_pass http://127.0.0.1:10000; <span class="hljs-comment">#你的节点端口</span><br>            proxy_http_version 1.1;<br>            proxy_set_header Upgrade <span class="hljs-variable">$http_upgrade</span>;<br>            proxy_set_header Connection <span class="hljs-string">&quot;upgrade&quot;</span>;<br>            proxy_set_header Host <span class="hljs-variable">$host</span>;<br>            proxy_set_header X-Real-IP <span class="hljs-variable">$remote_addr</span>;<br>            proxy_set_header X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;<br>        &#125;<br><br>        location /xui &#123;   <span class="hljs-comment">#xui路径</span><br>            proxy_redirect off;<br>            proxy_pass http://127.0.0.1:52345;  <span class="hljs-comment">#xui监听端口</span><br>            proxy_http_version 1.1;<br>            proxy_set_header Host <span class="hljs-variable">$host</span>;<br>        &#125;<br>    &#125;<br><br>    server &#123;<br>        listen 80;<br>        location /.well-known/ &#123;<br>               root /var/www/html;<br>            &#125;<br>        location / &#123;<br>                rewrite ^(.*)$ https://$host<span class="hljs-variable">$1</span> permanent;<br>            &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>文件配置好后复制覆盖到源文件， <code>Ctrl + S</code> 保存退出， 可以看到文件已被上传。</p>
+<p>然后访问 <code>test.yourdomain.com</code> 发现已经变成了自己伪装的网站，而访问 <code>test.yourdomain.com/你的x-ui路径</code> 变成了面板入口，这时你的伪装就成功了。</p>
+<blockquote>
+<p>这里是建议学习下nginx的location参数设置，可以更好个性化你的伪装站点，比如 <code>location /xui &#123;</code> 这段是最后匹配的，也就是只要地址以/xui结尾，那么就能访问。而修改成 <code>location = /xui &#123;</code> 表示只有域名后面跟着/xui 才能访问，不能多也不能少。</p>
+</blockquote>
+<h3 id="导入节点测试"><a class="markdownIt-Anchor" href="#导入节点测试"></a> 导入节点测试</h3>
+<p>重新打开 x-ui 面板，把节点导入到自己的v2ray内核代理软件中，这里要把服务器改成你的域名，端口改成 <code>443</code> ，然后检查下 <code>ws</code> 路径和TLS是否开启且服务器 <code>SNI</code> 为你的域名。</p>
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/IVIpjJM.png">
+    src="https://i.imgur.com/Dy1X4Qp.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">WSA设置
+    padding: 2px;">具体配置如下，其中请求头可写可不写，TLS记得打开
     </div>
 </center>
-<p>进去后在 <strong>系统 -&gt; 系统资源</strong> 勾选连续，以免后续使用WSATools 时可能会出现系统调度跟不上导致无法安装apk的情况</p>
-<p>然后在 <strong>开发人员 -&gt; 开发人员模式</strong> 勾选打开。</p>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/hAMpS9v.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">开发人员模式
-    </div>
-</center>
-<p>回到系统一栏，此时点击 <strong>文件</strong> 就可以出现WSA 运行的画面，这就完成了设置</p>
-<p>然后打开 WSATools 项目，在右下角的设置图标中打开设置，配置上自己 ADB 的可执行文件路径，此时便可以使用 WSATools 安装apk 文件了</p>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://i.imgur.com/cE1Og8j.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">根据自己安装位置修改
-    </div>
-</center>
+<p>检查无误后可以使用节点测试了</p>
+<hr />
+<h1 id="多用户代理"><a class="markdownIt-Anchor" href="#多用户代理"></a> 多用户代理</h1>
+<p>这里实现的思路使用443以外的端口，这里使用的是 <code>10000+</code> 的备用端口，然后使用Nginx 反代，使用端口443转发，这样看起来就是共用一个 <code>443</code> 端口了</p>
+<p>我们只需要在 nginx 的配置文件中添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs conf">location /ary &#123;   #节点ws路径<br>    proxy_redirect off;<br>    proxy_pass http://127.0.0.1:10000; #你的节点端口<br>    proxy_http_version 1.1;<br>    proxy_set_header Upgrade $http_upgrade;<br>    proxy_set_header Connection &quot;upgrade&quot;;<br>    proxy_set_header Host $host;<br>    proxy_set_header X-Real-IP $remote_addr;<br>    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>完成后保存退出，reload nginx服务即可。</p>
 
 </article>
     
@@ -501,7 +509,7 @@
     </li>
     <li class="trm-post-copyright-link">
         <strong>Post link: </strong>
-        <a id="original-link" href="https://me.jiefengzhou.com/24452/" title="Windows 11 安装WSA andorid 13 + play store + magisk">https://me.jiefengzhou.com/24452/</a>
+        <a id="original-link" href="https://me.jiefengzhou.com/8767/" title="OVZ机型 x-ui +nginx 实现单端口多用户代理">https://me.jiefengzhou.com/8767/</a>
     </li>
     <li class="trm-post-copyright-license">
         <strong>Copyright Notice: </strong>
@@ -523,16 +531,16 @@
     <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
         <div class="trm-older-publication">
             
-            <a class="trm-op-top trm-anima-link" href="/21004/">
+            <a class="trm-op-top trm-anima-link" href="/6941/">
                 <span class="trm-op-cover">
                     <img alt="cover" class="no-fancybox" src="/img/block.jpg">
                 </span>
-                <h6 class="trm-op-title">OpenVZ 机型 vps 开启 BBR 加速</h6>
+                <h6 class="trm-op-title">从零开始使用便宜VPS搭建自己的梯子，开启CDN后可以油管4k</h6>
             </a>
             <div class="trm-divider trm-mb-15 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>23/01/28</li>
-                <li>12:05</li>
+                <li>23/01/30</li>
+                <li>10:22</li>
                 <li>VPS</li>
             </ul>
         </div>
@@ -544,17 +552,17 @@
     <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
         <div class="trm-older-publication">
             
-            <a class="trm-op-top trm-anima-link" href="/45138/">
+            <a class="trm-op-top trm-anima-link" href="/20915/">
                 <span class="trm-op-cover">
                     <img alt="cover" class="no-fancybox" src="/img/block.jpg">
                 </span>
-                <h6 class="trm-op-title">hexo 博客快速搭建</h6>
+                <h6 class="trm-op-title">Debian 删除apache2</h6>
             </a>
             <div class="trm-divider trm-mb-15 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>23/01/27</li>
-                <li>01:07</li>
-                <li>Blog_Dev</li>
+                <li>23/01/29</li>
+                <li>15:37</li>
+                <li>Linux</li>
             </ul>
         </div>
     </div>
