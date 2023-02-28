@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="简单写写树与二叉树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树与森林">
+<meta property="og:url" content="https://me.jiefengzhou.com/23675/index.html">
+<meta property="og:site_name" content="希君生羽翼，一化北溟鱼">
+<meta property="og:description" content="简单写写树与二叉树">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://me.jiefengzhou.com/img/404.jpg">
+<meta property="og:image" content="https://me.jiefengzhou.com/img/404.jpg">
+<meta property="og:image" content="https://me.jiefengzhou.com/img/404.jpg">
+<meta property="og:image" content="https://me.jiefengzhou.com/img/404.jpg">
+<meta property="og:image" content="https://me.jiefengzhou.com/img/404.jpg">
+<meta property="og:image" content="https://me.jiefengzhou.com/img/404.jpg">
+<meta property="article:published_time" content="2022-11-01T13:14:02.000Z">
+<meta property="article:modified_time" content="2023-02-28T12:23:32.000Z">
+<meta property="article:author" content="周韵萱">
+<meta property="article:tag" content="数据结构与算法">
+<meta property="article:tag" content="二叉树">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://me.jiefengzhou.com/img/404.jpg">
+
+    <meta name="keywords" content="Blog">
+
+
+<title >树与森林</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.0.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.0.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://unpkg.com/katex@latest/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"me.jiefengzhou.com","author":"周韵萱","root":"/","typed_text":["始知锁向金笼听，不及山林自在啼。"],"theme_version":"2.0.2","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)Hey! Good again!","hideText":"(●—●)Oh, crash!"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":200},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-02-28 20:23:32"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.0.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Chou<span>Jeffrey</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    Archives
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    About
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-scroll data-scroll-direction="vertical">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            树与森林
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        23675
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    
+
+<div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
+    
+        <div class="trm-user-tabs" id="sidebar-tabs">
+           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
+                <div data-to="tabs-user" class="trm-tabs-nav-item">
+                    <i class="iconfont fas fa-user-alt"></i>
+                </div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active">
+                    <i class="iconfont fas fa-th-list"></i>
+                </div>
+           </div>
+            <div name="tabs-user" class="trm-tabs-item">
+                <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        周韵萱
+    </h5>
+    
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+                <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/JeffeyChou" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+                <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                Residence:
+            </div>
+            <div class="trm-label trm-label-light">
+                SiChuan
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Chengdu
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Age:
+            </div>
+            <div class="trm-label trm-label-light">
+                19
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+                
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:littcal@foxmail.com (小号防炸)" class="trm-btn">
+            Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+            </div>
+            <div name="tabs-toc" class="trm-tabs-item active">
+                <div class="post-toc">
+    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#树"  data-scroll-to="#树"><span class="toc-number">1.</span> <span class="toc-text"> 树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#树的常见术语"  data-scroll-to="#树的常见术语"><span class="toc-number">1.1.</span> <span class="toc-text"> 树的常见术语</span></a></li></ol></li><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#树结构与线性结构的比较"  data-scroll-to="#树结构与线性结构的比较"><span class="toc-number">2.</span> <span class="toc-text"> 树结构与线性结构的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#二叉树"  data-scroll-to="#二叉树"><span class="toc-number">2.1.</span> <span class="toc-text"> 二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#二叉树的性质"  data-scroll-to="#二叉树的性质"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 二叉树的性质</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#满二叉树"  data-scroll-to="#满二叉树"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 满二叉树</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#完全二叉树"  data-scroll-to="#完全二叉树"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 完全二叉树</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#二叉树的链式储存结构"  data-scroll-to="#二叉树的链式储存结构"><span class="toc-number">2.1.4.</span> <span class="toc-text"> 二叉树的链式储存结构</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#二叉树的遍历"  data-scroll-to="#二叉树的遍历"><span class="toc-number">2.1.5.</span> <span class="toc-text"> 二叉树的遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#-code2-"  data-scroll-to="#-code2-"><span class="toc-number">2.2.</span> <span class="toc-text"> 123456789101112131415void inorder(PBT pbt){ 	PStack ps &#x3D; init_stack(MAXSIZE); 	while ((pbt !&#x3D; NULL) || ! is_empty(ps)){ 	if (pbt !&#x3D;NULL){ 		printf (“%c”, pbt-&gt;data); &#x2F;&#x2F; 访问当前结点		push_stack(ps, pbt); &#x2F;&#x2F; 将pbt压栈 		pbt &#x3D; pbt-&gt;lchild; &#x2F;&#x2F; 将pbt指向其左子树 	} 	else{ 		pbt &#x3D; pop_stack(ps); &#x2F;&#x2F; 栈顶元素退栈  		pbt &#x3D; pbt-&gt;rchild; &#x2F;&#x2F; 将pbt指向其右子树 		} 	} 	destroy_stack(&amp;ps); &#x2F;&#x2F; 释放为栈分配的内存 }</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#-code7-"  data-scroll-to="#-code7-"><span class="toc-number">2.3.</span> <span class="toc-text"> 123456789101112131415void level_order(PBT pbt) { &#x2F;&#x2F; 层序遍历 	PBT p; 	PQue que &#x3D; init_que(MAXSIZE); 	if(pbt){ &#x2F;&#x2F; 二叉树非空 		enque(que, pbt); &#x2F;&#x2F; 根节点（指针）入队 		while (! is_empty(que)){ p &#x3D; deque(que); &#x2F;&#x2F; 队首元素出队 		printf(&quot;%c&quot;, p-&gt;data); 		if (p-&gt;lchild !&#x3D; NULL) { 			enque(que, p-&gt;lchild); } 		if (p-&gt;rchild !&#x3D; NULL) { 			enque(que, p-&gt;rchild); } 		} 	} 	destroy_que(&amp;que); &#x2F;&#x2F; 释放为队列分配的内存 }</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#-code8-"  data-scroll-to="#-code8-"><span class="toc-number">2.4.</span> <span class="toc-text"> 12345678910int count_leavs(PBT pbt){ 	if(! pbt){	return 0; &#x2F;&#x2F;空树的叶节点数为零	} 	if((!pbt-&gt;lchild) &amp;&amp; (!pbt-&gt;rchild)){	return 1; &#x2F;&#x2F;左右子树均为空，则为叶节点	} 	return count_leavs(pbt-&gt;lchild) + count_leavs (pbt-&gt;rchild); 	&#x2F;&#x2F;存在左右子树。递归调用结点统计函数}</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#-code9-"  data-scroll-to="#-code9-"><span class="toc-number">2.5.</span> <span class="toc-text"> 12345678910111213int get_depth(PBT pbt){ 	int dL &#x3D; 0, dR &#x3D; 0 	if( pbt &#x3D;&#x3D; NULL ){		return 0; &#x2F;&#x2F;空树深度为0	}	if((!pbt-&gt;lchild) &amp;&amp; (!pbt-&gt;rchild)){ 		return 1; &#x2F;&#x2F;叶节点深度为1	} 	dL &#x3D; get_depth (pbt-&gt;lchild); 	dR &#x3D; get_depth (pbt-&gt;rchild); 	&#x2F;&#x2F; 二叉树的深度为根结点左、右子树的深度值较大者加一 	return 1 + ((dL &gt; dR) ? dL : dR); }</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#哈夫曼树"  data-scroll-to="#哈夫曼树"><span class="toc-number">2.5.1.</span> <span class="toc-text"> 哈夫曼树</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#树和森林"  data-scroll-to="#树和森林"><span class="toc-number">2.5.2.</span> <span class="toc-text"> 树和森林</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#堆排序"  data-scroll-to="#堆排序"><span class="toc-number">2.5.3.</span> <span class="toc-text"> 堆排序</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#参考文献"  data-scroll-to="#参考文献"><span class="toc-number">2.5.4.</span> <span class="toc-text"> 参考文献</span></a></li></ol></li></ol></li></ol>
+</div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div id="page-content" class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            11/01
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            21:14
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            周韵萱
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="树"><a class="markdownIt-Anchor" href="#树"></a> 树</h1>
+<p><img src="https://i.imgur.com/89m5b9K.png" alt=""  loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'/></p>
+<p><strong>树的特点</strong>：</p>
+<ul>
+<li>每个结点有零个或多个子结点</li>
+<li>没有父节点的结点称为<strong>根节点</strong></li>
+<li>每一个非根结点有且只有一个父节点</li>
+<li>除了根结点外，每个子结点可以分为多个不相交的<strong>子树</strong>。</li>
+</ul>
+<h2 id="树的常见术语"><a class="markdownIt-Anchor" href="#树的常见术语"></a> 树的常见术语</h2>
+<p><strong>结点的度</strong>：结点拥有的子树的数目</p>
+<p><strong>子节点(child)</strong>： 结点子树的根称为该节点的子节点。</p>
+<p><strong>父节点(parents)</strong>： 子节点的上层节点叫做该节点的父节点。</p>
+<p><strong>姊妹节点(sibling)</strong>： 具有同一父节结点的结点。</p>
+<p><strong>堂结点(cousin)</strong>：双亲在同一层的结点互为堂兄弟。</p>
+<p><strong>叶结点(leaf)</strong>：度为0的结点</p>
+<p><strong>分支结点</strong>：度不为0的结点</p>
+<p><strong>树的度</strong>：树中结点的最大的度</p>
+<p><strong>层次</strong>：根结点的层次为1，其余结点的层次等于该结点的双亲结点的层次加1</p>
+<p><strong>树的高度</strong>：树中结点的最大层次</p>
+<p><strong>森林</strong>：0个或多个不相交的树组成。对森林加上一个根，森林即成为树；删去根，树即成为森林。</p>
+<p><strong>有序树</strong>： 树中结点各子树从左至右是有序的，不能互换。</p>
+<p><strong>无序树</strong>： 树中结点各子树从左至右是无序的，可以互换。</p>
+<p><strong>m叉树</strong>： 允许所有的节点的度都不大于m。可以是空树。</p>
+<p><img src="https://i.imgur.com/tXdOMmb.png" alt=""  loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'/></p>
+<hr />
+<h1 id="树结构与线性结构的比较"><a class="markdownIt-Anchor" href="#树结构与线性结构的比较"></a> 树结构与线性结构的比较</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">线性结构</th>
+<th style="text-align:center">树结构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">头结点无前驱</td>
+<td style="text-align:center">头结点无双亲</td>
+</tr>
+<tr>
+<td style="text-align:center">尾结点无后继</td>
+<td style="text-align:center">叶结点无孩子</td>
+</tr>
+<tr>
+<td style="text-align:center">其它元素一个前驱一个后驱</td>
+<td style="text-align:center">其它结点一个双亲，多个孩子</td>
+</tr>
+<tr>
+<td style="text-align:center">元素之间一对一</td>
+<td style="text-align:center">元素之间一对多</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="二叉树"><a class="markdownIt-Anchor" href="#二叉树"></a> 二叉树</h2>
+<p>二叉树是每个结点最多有两个子树的树结构。它有五种基本形态：<img src="https://i.imgur.com/OOEpZM1.png" alt=""  loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'/></p>
+<h3 id="二叉树的性质"><a class="markdownIt-Anchor" href="#二叉树的性质"></a> 二叉树的性质</h3>
+<ol>
+<li>二叉树第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>层上的结点数目最多为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>i</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="false">(</mo><mi>i</mi><mo>&gt;</mo><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">2^i-1(i&gt;=1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.907994em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>深度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>的二叉树至多有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个结点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>k</mi><mo>&gt;</mo><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(k&gt;=1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>包含<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个结点的二叉树的高度至少为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mn>2</mn><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(log2n)+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+<li>在任意一棵二叉树中，若终端结点的个数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">n^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span>，度为2的结点数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>0</mn></msup><mo>=</mo><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n^0=n^2+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+</ol>
+<h3 id="满二叉树"><a class="markdownIt-Anchor" href="#满二叉树"></a> 满二叉树</h3>
+<p>高度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>，并且由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>h</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^h-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">h</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个结点组成的二叉树，称为满二叉树。<em>满二叉树的叶结点只能出现在树的最底层</em></p>
+<h3 id="完全二叉树"><a class="markdownIt-Anchor" href="#完全二叉树"></a> 完全二叉树</h3>
+<p>一棵二叉树中，只有最下面两层结点的度可以小于2，并且最下层的叶结点集中在靠左的若干位置上，这样的二叉树称为完全二叉树。<em>叶结点只能出现在最下两层</em> <strong>满二叉树一定是完全二叉树，完全二叉树不一定是满二叉树</strong><br />
+<img src="https://i.imgur.com/GwLOv7s.png" alt=""  loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'/></p>
+<h3 id="二叉树的链式储存结构"><a class="markdownIt-Anchor" href="#二叉树的链式储存结构"></a> 二叉树的链式储存结构</h3>
+<p><strong>二叉树的链式储存结构</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span><br>	ElemType data;<br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">lchild</span>;</span><br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">rchild</span>;</span><br>&#125; BTNode, *BT*;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>	BTNode* data[MAXSIZE];<br>	<span class="hljs-type">int</span> top;<br>&#125; SqStack;<br></code></pre></td></tr></table></figure>
+<p><strong>三叉树的链式储存结构</strong>：在二叉树的基础上增加一个指向父结点的指针域。</p>
+<h3 id="二叉树的遍历"><a class="markdownIt-Anchor" href="#二叉树的遍历"></a> 二叉树的遍历</h3>
+<h4 id="深度遍历-前序遍历alr"><a class="markdownIt-Anchor" href="#深度遍历-前序遍历alr"></a> 深度遍历-前序遍历ALR</h4>
+<p>根结点 —&gt; 左子树 —&gt; 右子树</p>
+<ul>
+<li>递归形式</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">visit</span><span class="hljs-params">(Tree t, <span class="hljs-type">int</span> level)</span>&#123;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c位于第%d层\n&quot;</span>, t-&gt;data, level);<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">scan</span><span class="hljs-params">(Tree t,<span class="hljs-type">int</span> level)</span>&#123;<br>	<span class="hljs-keyword">if</span> (t != <span class="hljs-literal">NULL</span>)&#123;<br>		 visit(t, level);<br>		 scan(t-&gt;LeftChild, level + <span class="hljs-number">1</span>);<br>		 scan(t-&gt;RightChild,level + <span class="hljs-number">1</span>);<br>	 &#125;<br> &#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>非递归形式</li>
+</ul>
+<h2 id="-code2-"><a class="markdownIt-Anchor" href="#-code2-"></a> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">inorder</span><span class="hljs-params">(PBT pbt)</span>&#123; <br>	PStack ps = init_stack(MAXSIZE); <br>	<span class="hljs-keyword">while</span> ((pbt != <span class="hljs-literal">NULL</span>) || ! is_empty(ps))&#123; <br>	<span class="hljs-keyword">if</span> (pbt !=<span class="hljs-literal">NULL</span>)&#123; <br>		<span class="hljs-built_in">printf</span> (“%c”, pbt-&gt;data); <span class="hljs-comment">// 访问当前结点</span><br>		push_stack(ps, pbt); <span class="hljs-comment">// 将pbt压栈 </span><br>		pbt = pbt-&gt;lchild; <span class="hljs-comment">// 将pbt指向其左子树 </span><br>	&#125; <br>	<span class="hljs-keyword">else</span>&#123; <br>		pbt = pop_stack(ps); <span class="hljs-comment">// 栈顶元素退栈  </span><br>		pbt = pbt-&gt;rchild; <span class="hljs-comment">// 将pbt指向其右子树 </span><br>		&#125; <br>	&#125; <br>	destroy_stack(&amp;ps); <span class="hljs-comment">// 释放为栈分配的内存 </span><br>&#125;<br></code></pre></td></tr></table></figure></h2>
+<h4 id="深度遍历-中序遍历lar"><a class="markdownIt-Anchor" href="#深度遍历-中序遍历lar"></a> 深度遍历-中序遍历LAR</h4>
+<p>左子树—&gt; 根结点 —&gt; 右子树</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">visit</span><span class="hljs-params">(Tree t, <span class="hljs-type">int</span> level)</span>&#123;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c位于第%d层\n&quot;</span>, t-&gt;data, level);<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">scan</span><span class="hljs-params">(Tree t,<span class="hljs-type">int</span> level)</span>&#123;<br>	<span class="hljs-keyword">if</span> (t != <span class="hljs-literal">NULL</span>)&#123;<br>		 scan(t-&gt;LeftChild, level + <span class="hljs-number">1</span>);<br>		 visit(t, level);<br>		 scan(t-&gt;RightChild,level + <span class="hljs-number">1</span>);<br>	 &#125;<br> &#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>非递归形式</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">inorder</span><span class="hljs-params">(PBT pbt)</span>&#123; <br>	PStack ps = init_stack(MAXSIZE); <br>	<span class="hljs-keyword">while</span> ((pbt != <span class="hljs-literal">NULL</span>) || ! is_empty(ps))&#123; <br>	<span class="hljs-keyword">if</span> (pbt !=<span class="hljs-literal">NULL</span>)&#123; <br>		push_stack(ps, pbt); <span class="hljs-comment">// 将pbt压栈 </span><br>		pbt = pbt-&gt;lchild; <span class="hljs-comment">// 将pbt指向其左子树 </span><br>	&#125; <br>	<span class="hljs-keyword">else</span>&#123; <br>		pbt = pop_stack(ps); <span class="hljs-comment">// 栈顶元素退栈 </span><br>		<span class="hljs-built_in">printf</span> (“%c”, pbt-&gt;data); <span class="hljs-comment">// 访问当前结点 </span><br>		pbt = pbt-&gt;rchild; <span class="hljs-comment">// 将pbt指向其右子树 </span><br>		&#125; <br>	&#125; <br>	destroy_stack(&amp;ps); <span class="hljs-comment">// 释放为栈分配的内存 </span><br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h4 id="深度遍历-后序遍历lra"><a class="markdownIt-Anchor" href="#深度遍历-后序遍历lra"></a> 深度遍历-后序遍历LRA</h4>
+<p>左子树 —&gt; 右子树 —&gt; 根结点</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">visit</span><span class="hljs-params">(Tree t, <span class="hljs-type">int</span> level)</span>&#123;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c位于第%d层\n&quot;</span>, t-&gt;data, level);<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">scan</span><span class="hljs-params">(Tree t,<span class="hljs-type">int</span> level)</span>&#123;<br>	<span class="hljs-keyword">if</span> (t != <span class="hljs-literal">NULL</span>)&#123;<br>		 scan(t-&gt;LeftChild, level + <span class="hljs-number">1</span>);<br>		 scan(t-&gt;RightChild,level + <span class="hljs-number">1</span>);<br>		 visit(t, level);- [[共轭类方法]]<br>	 &#125;<br> &#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>非递归形式</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">inorder</span><span class="hljs-params">(PBT pbt)</span>&#123; <br>	PStack ps = init_stack(MAXSIZE); <br>	<span class="hljs-keyword">while</span> ((pbt != <span class="hljs-literal">NULL</span>) || ! is_empty(ps))&#123; <br>	<span class="hljs-keyword">if</span> (pbt !=<span class="hljs-literal">NULL</span>)&#123; <br>		<span class="hljs-keyword">if</span> (!pbt-&gt;visited)&#123;<br>			push_stack(ps, pbt); <span class="hljs-comment">// 将pbt压栈 </span><br>			&#125;<br>		pbt = pbt-&gt;lchild; <span class="hljs-comment">// 将pbt指向其左子树 </span><br>	&#125; <br>	<span class="hljs-keyword">else</span>&#123; <br>		pbt = pop_stack(ps); <span class="hljs-comment">// 栈顶元素退栈 </span><br>		<span class="hljs-keyword">if</span> (pbt-&gt;visited)&#123;<br>		<span class="hljs-built_in">printf</span> (“%c”, pbt-&gt;data); <span class="hljs-comment">// 访问当前结点 &#125;</span><br>		<span class="hljs-keyword">else</span>&#123; <br>			pbt-&gt;visited = <span class="hljs-number">1</span>;<br>			push_stack(pb, pbt);<br>		&#125;<br>		pbt = pbt-&gt;rchild; <span class="hljs-comment">// 将pbt指向其右子树 </span><br>		&#125; <br>	&#125; <br>	destroy_stack(&amp;ps); <span class="hljs-comment">// 释放为栈分配的内存 </span><br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h4 id="广度遍历"><a class="markdownIt-Anchor" href="#广度遍历"></a> 广度遍历</h4>
+<ul>
+<li><strong>层次遍历算法</strong>
+<ul>
+<li>从根节点开始从上到下逐层遍历</li>
+<li>同一层中从左到右依次遍历</li>
+<li>按照先进先出特点使用<em>队列</em>结构。</li>
+</ul>
+</li>
+<li>算法描述
+<ul>
+<li>首先将根节点指针入队</li>
+<li>循环读取队首元素，递归操作知道队空
+<ul>
+<li>访问该节点的数据部分</li>
+<li>若该节点有左子节点，将其入队</li>
+<li>若该节点有右子节点，将其入队</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-code7-"><a class="markdownIt-Anchor" href="#-code7-"></a> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">void</span> <span class="hljs-title function_">level_order</span><span class="hljs-params">(PBT pbt)</span> &#123; <span class="hljs-comment">// 层序遍历 </span><br>	PBT p; <br>	PQue que = init_que(MAXSIZE); <br>	<span class="hljs-keyword">if</span>(pbt)&#123; <span class="hljs-comment">// 二叉树非空 </span><br>		enque(que, pbt); <span class="hljs-comment">// 根节点（指针）入队 </span><br>		<span class="hljs-keyword">while</span> (! is_empty(que))&#123; p = <span class="hljs-built_in">deque</span>(que); <span class="hljs-comment">// 队首元素出队 </span><br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, p-&gt;data); <br>		<span class="hljs-keyword">if</span> (p-&gt;lchild != <span class="hljs-literal">NULL</span>) &#123; <br>			enque(que, p-&gt;lchild); &#125; <br>		<span class="hljs-keyword">if</span> (p-&gt;rchild != <span class="hljs-literal">NULL</span>) &#123; <br>			enque(que, p-&gt;rchild); &#125; <br>		&#125; <br>	&#125; <br>	destroy_que(&amp;que); <span class="hljs-comment">// 释放为队列分配的内存 </span><br>&#125;<br></code></pre></td></tr></table></figure></h2>
+<h4 id="不同遍历算法的图示"><a class="markdownIt-Anchor" href="#不同遍历算法的图示"></a> 不同遍历算法的图示</h4>
+<p><img src="https://i.imgur.com/hLLXarw.png" alt=""  loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'/></p>
+<hr />
+<h4 id="统计二叉树叶结点个数"><a class="markdownIt-Anchor" href="#统计二叉树叶结点个数"></a> 统计二叉树叶结点个数</h4>
+<h2 id="-code8-"><a class="markdownIt-Anchor" href="#-code8-"></a> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-title function_">count_leavs</span><span class="hljs-params">(PBT pbt)</span>&#123; <br>	<span class="hljs-keyword">if</span>(! pbt)&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">//空树的叶节点数为零</span><br>	&#125; <br>	<span class="hljs-keyword">if</span>((!pbt-&gt;lchild) &amp;&amp; (!pbt-&gt;rchild))&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">//左右子树均为空，则为叶节点</span><br>	&#125; <br>	<span class="hljs-keyword">return</span> count_leavs(pbt-&gt;lchild) + count_leavs (pbt-&gt;rchild); <br>	<span class="hljs-comment">//存在左右子树。递归调用结点统计函数</span><br>&#125;<br></code></pre></td></tr></table></figure></h2>
+<h4 id="二叉树深度"><a class="markdownIt-Anchor" href="#二叉树深度"></a> 二叉树深度</h4>
+<h2 id="-code9-"><a class="markdownIt-Anchor" href="#-code9-"></a> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-title function_">get_depth</span><span class="hljs-params">(PBT pbt)</span>&#123; <br>	<span class="hljs-type">int</span> dL = <span class="hljs-number">0</span>, dR = <span class="hljs-number">0</span> <br>	<span class="hljs-keyword">if</span>( pbt == <span class="hljs-literal">NULL</span> )&#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">//空树深度为0</span><br>	&#125;<br>	<span class="hljs-keyword">if</span>((!pbt-&gt;lchild) &amp;&amp; (!pbt-&gt;rchild))&#123; <br>		<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">//叶节点深度为1</span><br>	&#125; <br>	dL = get_depth (pbt-&gt;lchild); <br>	dR = get_depth (pbt-&gt;rchild); <br>	<span class="hljs-comment">// 二叉树的深度为根结点左、右子树的深度值较大者加一 </span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">1</span> + ((dL &gt; dR) ? dL : dR); <br>&#125;<br></code></pre></td></tr></table></figure></h2>
+<h3 id="哈夫曼树"><a class="markdownIt-Anchor" href="#哈夫曼树"></a> 哈夫曼树</h3>
+<h3 id="树和森林"><a class="markdownIt-Anchor" href="#树和森林"></a> 树和森林</h3>
+<h4 id="树的储存结构"><a class="markdownIt-Anchor" href="#树的储存结构"></a> 树的储存结构</h4>
+<h5 id="1-双亲数组表示"><a class="markdownIt-Anchor" href="#1-双亲数组表示"></a> 1. 双亲数组表示</h5>
+<ul>
+<li><strong>实现:</strong> 定义结构数组存放树的结点，每个结点含两个域
+<ul>
+<li><strong>数据域:</strong> 存放结点本身信息</li>
+<li><strong>双亲域:</strong> 指示本结点的双亲结点在数组中的位置</li>
+<li><strong>特点:</strong> 找双亲容易，找孩子难<br />
+<img src="https://i.imgur.com/Xb03Pnz.png" alt=""  loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'/></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">define</span> SIZE 10</span><br> <br><span class="hljs-keyword">typedef</span> <span class="hljs-type">char</span> Datatype;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">PTNode</span></span><br><span class="hljs-class">&#123;</span><br>	Datatype ch;<br>	<span class="hljs-type">int</span> parent;             <span class="hljs-comment">//双亲位置域</span><br>&#125;PTNode;           <br> <br><span class="hljs-keyword">typedef</span> sturct<br>&#123;<br>	PTNode nodes[SIZE];<br>	<span class="hljs-type">int</span> r, n;                              <span class="hljs-comment">//根结点的位置和结点个数</span><br>&#125;PTree;<br></code></pre></td></tr></table></figure>
+<h5 id="2-孩子链表"><a class="markdownIt-Anchor" href="#2-孩子链表"></a> 2. 孩子链表</h5>
+<h3 id="堆排序"><a class="markdownIt-Anchor" href="#堆排序"></a> 堆排序</h3>
+<h3 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h3>
+
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>Post author: </strong>
+        周韵萱
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>Post link: </strong>
+        <a id="original-link" href="https://me.jiefengzhou.com/23675/" title="树与森林">https://me.jiefengzhou.com/23675/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>Copyright Notice: </strong>
+        All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> unless otherwise stated.
+    </li>
+</ul>
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/58423/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                </span>
+                <h6 class="trm-op-title">二元关系</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/11/03</li>
+                <li>09:26</li>
+                <li>离散数学</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/37441/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="https://cdn.pixabay.com/photo/2016/03/03/10/20/mathematics-1233876__480.jpg">
+                </span>
+                <h6 class="trm-op-title">电磁学-第一章 静电场</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/09/29</li>
+                <li>14:43</li>
+                <li>基础物理</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2023- 2023</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">周韵萱</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.0.2
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            The blog has been lovely to run <span id="since" class="trm-accent-color"></span> day
+        </div>
+     
+
+    
+        <div class="trm-footer-item">
+            今天是咕咕的一天捏(❁´◡`❁)
+        </div>
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("01/26/2023 01:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+    
+        <div class="trm-fixed-btn" data-title="Read Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="Back To Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  
+<div class="trm-search-popup">
+    <div class="trm-search-header">
+        <span class="trm-search-popup-btn-close">
+            <i class="iconfont fas fa-times"></i>
+        </span>
+    </div>
+    <div class="form trm-search-form">
+        <input class="trm-search-input" type="text" placeholder="Searching...">
+    </div>
+    <div class="trm-search-result-container">
+
+    </div>
+</div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.0.2"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.0.2"></script>
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://unpkg.com/katex@latest/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://unpkg.com/katex@latest/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://unpkg.com/katex@latest/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.0.2"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"react":{"opacity":0.7},"dialog":{"enable":true,"hitokoto":false},"log":false});</script></body>
+
+</html>
